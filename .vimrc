@@ -41,7 +41,11 @@ let g:netrw_browse_split = 4
 let g:netrw_winsize = 25
 let g:netrw_altv = 1
 
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+"augroup END
+
+"Tab switching
+nmap <c-h> <c-w>h<c-w>
+nmap <c-l> <c-w>l<c-w>
