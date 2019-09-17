@@ -33,3 +33,15 @@ set ff=unix
 
 "path to directory where clang library can be found
 let g:clang_library_path='/usr/lib/x86_64-linux-gnu/libclang-6.0.so.1'
+
+"Files tree
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 25
+let g:netrw_altv = 1
+
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
