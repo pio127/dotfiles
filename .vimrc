@@ -23,6 +23,7 @@ set autoindent
 set expandtab
 
 autocmd Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2 cindent
+autocmd Filetype py setlocal expandtab tabstop=4 shiftwidth=4 autoindent
 
 set hlsearch
 set ignorecase
@@ -41,11 +42,12 @@ let g:netrw_browse_split = 4
 let g:netrw_winsize = 25
 let g:netrw_altv = 1
 
-"augroup ProjectDrawer
-"  autocmd!
-"  autocmd VimEnter * :Vexplore
-"augroup END
-
 "Tab switching
 nmap <c-h> <c-w>h<c-w>
 nmap <c-l> <c-w>l<c-w>
+
+"Remove arrow keys
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
