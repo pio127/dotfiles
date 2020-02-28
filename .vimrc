@@ -46,6 +46,6 @@ let g:netrw_altv = 1
 "  autocmd VimEnter * :Vexplore
 "augroup END
 
-"Tab switching
+"Tab switching with ctrl+hl
 nmap <c-h> <c-w>h<c-w>
 nmap <c-l> <c-w>l<c-w>
