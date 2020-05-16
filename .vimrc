@@ -1,14 +1,16 @@
+set nocompatible
 syntax enable 
 set number
 set wrap
 set encoding=utf-8
 set laststatus=2
 set ruler 
-set cursorline
 set relativenumber
 set noerrorbells
 set title
 set wildmenu
+set ttymouse=xterm2
+set background=dark
 set mouse=a
 set clipboard=unnamedplus
 set backupdir=~/.cache/vim

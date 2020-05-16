@@ -99,3 +99,14 @@ source $ZSH/oh-my-zsh.sh
 
 
 alias mc=". /usr/share/mc/bin/mc-wrapper.sh"
+
+PATH="/home/piotr/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/piotr/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/piotr/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/piotr/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/piotr/perl5"; export PERL_MM_OPT;
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /home/piotr/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export PAGER="most"
