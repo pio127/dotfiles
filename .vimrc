@@ -24,7 +24,7 @@ set shiftwidth=4
 set autoindent
 set expandtab
 
-autocmd Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2 cindent
+autocmd Filetype cpp setlocal expandtab tabstop=4 shiftwidth=4 cindent
 autocmd Filetype py setlocal expandtab tabstop=4 shiftwidth=4 autoindent
 
 set hlsearch
@@ -33,9 +33,6 @@ nnoremap <CR> :noh<CR><CR>
 
 "Unix Line Endings = '\n' "
 set ff=unix
-
-"path to directory where clang library can be found
-let g:clang_library_path='/usr/lib/x86_64-linux-gnu/libclang-6.0.so.1'
 
 "Files tree
 let g:netrw_liststyle = 3
