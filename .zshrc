@@ -27,3 +27,5 @@ $(command -v most 1>/dev/null 2>&1) && export PAGER="most"
 
 # Setting term env variable to xterm_256color
 export TERM="xterm-256color"
+
+export EDITOR="vim"

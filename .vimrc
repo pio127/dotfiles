@@ -18,13 +18,14 @@ set confirm
 set history=1000
 set noswapfile
 set shell=zsh
-
 set tabstop=4
 set shiftwidth=4
 set autoindent
 set expandtab
 
 autocmd Filetype cpp setlocal expandtab tabstop=4 shiftwidth=4 cindent
+autocmd Filetype c setlocal expandtab tabstop=4 shiftwidth=4 cindent
+autocmd Filetype make setlocal noexpandtab
 autocmd Filetype py setlocal expandtab tabstop=4 shiftwidth=4 autoindent
 
 set hlsearch
@@ -33,13 +34,6 @@ nnoremap <CR> :noh<CR><CR>
 
 "Unix Line Endings = '\n' "
 set ff=unix
-
-"Files tree
-let g:netrw_liststyle = 3
-let g:netrw_banner = 0
-let g:netrw_browse_split = 4
-let g:netrw_winsize = 25
-let g:netrw_altv = 1
 
 "Tab switching
 nmap <c-h> <c-w>h<c-w>
@@ -50,3 +44,15 @@ noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+
+"Add fzf plugin
+set rtp+=~/.fzf
+
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+let g:ycm_clangd_binary_path = "/usr/lib/llvm-6.0/bin/clangd"
+
+"let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
