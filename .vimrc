@@ -1,5 +1,5 @@
-set nocompatible
 syntax enable 
+set nocompatible
 set number
 set wrap
 set encoding=utf-8
@@ -22,22 +22,18 @@ set tabstop=4
 set shiftwidth=4
 set autoindent
 set expandtab
+set hlsearch
+set ignorecase
+set incsearch
 
-autocmd Filetype cpp setlocal expandtab tabstop=4 shiftwidth=4 cindent
-autocmd Filetype c setlocal expandtab tabstop=4 shiftwidth=4 cindent
+autocmd Filetype c,cpp,h,hpp setlocal expandtab tabstop=4 shiftwidth=4 cindent
 autocmd Filetype make setlocal noexpandtab
 autocmd Filetype py setlocal expandtab tabstop=4 shiftwidth=4 autoindent
 
-set hlsearch
-set ignorecase
 nnoremap <CR> :noh<CR><CR>
 
 "Unix Line Endings = '\n' "
 set ff=unix
-
-"Tab switching
-nmap <c-h> <c-w>h<c-w>
-nmap <c-l> <c-w>l<c-w>
 
 "Remove arrow keys
 noremap <Up> <nop>
@@ -48,11 +44,6 @@ noremap <Right> <nop>
 "Add fzf plugin
 set rtp+=~/.fzf
 
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
-
-let g:ycm_clangd_binary_path = "/usr/lib/llvm-6.0/bin/clangd"
-
-"let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+"Autosave after 2 sec idle
+set updatetime=2000
+autocmd CursorHold,CursorHoldI * update

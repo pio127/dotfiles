@@ -2,13 +2,12 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # Theme
+#ZSH_THEME="simple"
+#ZSH_THEME="risto"
 ZSH_THEME="bira"
 
 # Enable command auto-correction
 # ENABLE_CORRECTION="true"
-
-# Display red dots whilst waiting for completion
-COMPLETION_WAITING_DOTS="true"
 
 # Plugins
 plugins=(git zsh-syntax-highlighting)
@@ -17,7 +16,8 @@ plugins=(git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Browsing with Midnight Commander
-alias mc=". /usr/share/mc/bin/mc-wrapper.sh"
+[ -f /usr/share/mc/bin/mc-wrapper.sh ] && alias mc=". /usr/share/mc/bin/mc-wrapper.sh"
+[ -f /usr/lib/mc/mc-wrapper.sh ] && alias mc=". /usr/lib/mc/mc-wrapper.sh"
 
 # Fuzzy finder activation
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
@@ -29,3 +29,7 @@ $(command -v most 1>/dev/null 2>&1) && export PAGER="most"
 export TERM="xterm-256color"
 
 export EDITOR="vim"
+
+export PATH=$PATH:~/projects/bash/scripts
+
+stty -ixon
