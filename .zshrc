@@ -25,11 +25,14 @@ source $ZSH/oh-my-zsh.sh
 # Setting most as a pager
 $(command -v most 1>/dev/null 2>&1) && export PAGER="most"
 
-# Setting term env variable to xterm_256color
+# Setting term env variable to xterm_256color for tmux
 export TERM="xterm-256color"
 
+# Main text editor
 export EDITOR="vim"
 
+# Default scripts folder
 export PATH=$PATH:~/projects/bash/scripts
 
+# Prevent Ctrl+s terminal freeze
 stty -ixon
