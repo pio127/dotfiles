@@ -9,8 +9,8 @@ set relativenumber
 set noerrorbells
 set title
 set wildmenu
-set ttymouse=xterm2
 set background=dark
+set ttymouse=xterm2
 set mouse=a
 set clipboard=unnamedplus
 set backupdir=~/.cache
@@ -18,17 +18,19 @@ set confirm
 set history=1000
 set noswapfile
 set shell=zsh
-set tabstop=4
-set shiftwidth=4
-set autoindent
-set expandtab
 set hlsearch
 set ignorecase
 set incsearch
 
-autocmd Filetype c,cpp,h,hpp setlocal expandtab tabstop=4 shiftwidth=4 cindent
+"Default formatting
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set expandtab
+
+"Filetype specific formatting
+autocmd Filetype c,cpp,h,hpp setlocal cindent
 autocmd Filetype make setlocal noexpandtab
-autocmd Filetype py setlocal expandtab tabstop=4 shiftwidth=4 autoindent
 
 "Rebuild cmake project
 nnoremap <F3> : ! bash -c 'cd build && cmake .. && make -j' <CR>
@@ -48,13 +50,16 @@ noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
-"Add fzf plugin
+"Add fzf plugin location
 set rtp+=~/.fzf
 
 "If buffer is named then autosave after 1 sec idle
 set updatetime=1000
-autocmd CursorHold,CursorHoldI * if @% != '' | update | endif
+autocmd CursorHold,CursorHoldI * if @% != '' && @% != '!zsh' | update | endif
 
 "Buffer switching with leader+[]
 map <leader>[ :previous <CR>
 map <leader>] :next <CR>
+
+"Paste in visual mode without copying
+xnoremap p pgvy

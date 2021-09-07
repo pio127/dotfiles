@@ -1,26 +1,27 @@
-# Path to oh-my-zsh installation
 export ZSH="$HOME/.oh-my-zsh"
+export ZSH_THEME="bira"
+export FZF_BASE="$HOME/.fzf"
 
-# Theme
-#ZSH_THEME="simple"
-#ZSH_THEME="risto"
-ZSH_THEME="bira"
-
-# Enable command auto-correction
-# ENABLE_CORRECTION="true"
-
-# Plugins
-plugins=(git zsh-syntax-highlighting)
+plugins=(git 
+         zsh-syntax-highlighting
+         systemadmin
+         vi-mode
+         )
 
 # Oh-my-zsh activation
 source $ZSH/oh-my-zsh.sh
 
+# Setting fzf
+if [[ ! "$PATH" == *$HOME/.fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}$HOME/.fzf/bin"
+fi
+[[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.zsh" 2> /dev/null; \
+                   source "$HOME/.fzf/shell/key-bindings.zsh"
+
+
 # Browsing with Midnight Commander
 [ -f /usr/share/mc/bin/mc-wrapper.sh ] && alias mc=". /usr/share/mc/bin/mc-wrapper.sh"
 [ -f /usr/lib/mc/mc-wrapper.sh ] && alias mc=". /usr/lib/mc/mc-wrapper.sh"
-
-# Fuzzy finder activation
-[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 # Setting most as a pager
 $(command -v most 1>/dev/null 2>&1) && export PAGER="most"
@@ -36,3 +37,6 @@ export PATH=$PATH:~/projects/bash/scripts
 
 # Prevent Ctrl+s terminal freeze
 stty -ixon
+
+# Adding autojump
+[ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh 
