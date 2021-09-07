@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cp ~/.vimrc . && echo ".vimrc copied"
-cp ~/.zshrc . && echo ".zshrc copied"
-cp ~/.tmux.conf . && echo ".tmux.conf copied"
+cp ~/.vimrc . && echo "New .vimrc copied"
+cp ~/.zshrc . && echo "New .zshrc copied"
+cp ~/.tmux.conf . && echo "New .tmux.conf copied"
