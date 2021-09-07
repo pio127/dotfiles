@@ -1,30 +1,41 @@
-export ZSH="$HOME/.oh-my-zsh"
-export ZSH_THEME="bira"
-export FZF_BASE="$HOME/.fzf"
+# Loading oh-my-zsh with plugins
+if [ ! -d $HOME/.oh-my-zsh ]; then
+    echo "\e[0;31mDirectory \".oh-my-zsh\" was not found in the home folder.\e[0m"
+else
+    export ZSH="$HOME/.oh-my-zsh"
+    export ZSH_THEME="bira"
+    export FZF_BASE="$HOME/.fzf"
 
-plugins=(git 
-         zsh-syntax-highlighting
-         systemadmin
-         vi-mode
-         )
+    plugins=(
+        git 
+        vi-mode
+        fzf
+        jump
+        zsh-syntax-highlighting
+        zsh-interactive-cd
+    )
 
-# Oh-my-zsh activation
-source $ZSH/oh-my-zsh.sh
-
-# Setting fzf
-if [[ ! "$PATH" == *$HOME/.fzf/bin* ]]; then
-  export PATH="${PATH:+${PATH}:}$HOME/.fzf/bin"
+    source $ZSH/oh-my-zsh.sh
 fi
-[[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.zsh" 2> /dev/null; \
-                   source "$HOME/.fzf/shell/key-bindings.zsh"
-
 
 # Browsing with Midnight Commander
-[ -f /usr/share/mc/bin/mc-wrapper.sh ] && alias mc=". /usr/share/mc/bin/mc-wrapper.sh"
-[ -f /usr/lib/mc/mc-wrapper.sh ] && alias mc=". /usr/lib/mc/mc-wrapper.sh"
+if [ -f /usr/share/mc/bin/mc-wrapper.sh ]; then
+    alias mc=". /usr/share/mc/bin/mc-wrapper.sh"
+elif [ -f /usr/lib/mc/mc-wrapper.sh ]; then
+    alias mc=". /usr/lib/mc/mc-wrapper.sh"
+fi
 
-# Setting most as a pager
-$(command -v most 1>/dev/null 2>&1) && export PAGER="most"
+# Adding colors to less in manuals
+export LESS_TERMCAP_mb=$'\e[1;31m'    
+export LESS_TERMCAP_md=$'\e[1;33m'    
+export LESS_TERMCAP_so=$'\e[01;44;37m'
+export LESS_TERMCAP_us=$'\e[01;37m'   
+export LESS_TERMCAP_me=$'\e[0m'       
+export LESS_TERMCAP_se=$'\e[0m'       
+export LESS_TERMCAP_ue=$'\e[0m'       
+export GROFF_NO_SGR=1                 
+export MANPAGER='less -s -M +Gg'
+export PAGER='less'
 
 # Setting term env variable to xterm_256color for tmux
 export TERM="xterm-256color"
@@ -33,10 +44,7 @@ export TERM="xterm-256color"
 export EDITOR="vim"
 
 # Default scripts folder
-export PATH=$PATH:~/projects/bash/scripts
+export PATH=$PATH:"$HOME/projects/bash/scripts"
 
 # Prevent Ctrl+s terminal freeze
 stty -ixon
-
-# Adding autojump
-[ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh 
