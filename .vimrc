@@ -44,18 +44,13 @@ nnoremap <CR> :noh<CR><CR>
 "Unix Line Endings = '\n' "
 set ff=unix
 
-"Remove arrow keys
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
-
 "Add fzf plugin location
 set rtp+=~/.fzf
 
 "If buffer is named then autosave after 1 sec idle
 set updatetime=1000
 autocmd CursorHold,CursorHoldI * if @% != '' && @% != '!zsh' | update | endif
+
 
 "Buffer switching with leader+[]
 map <leader>[ :previous <CR>
