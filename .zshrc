@@ -4,7 +4,7 @@ if [ ! -d $HOME/.oh-my-zsh ]; then
 else
     export ZSH="$HOME/.oh-my-zsh"
     export ZSH_THEME="bira"
-    export FZF_BASE="$HOME/.fzf"
+    export FZF_BASE="$HOME/.vim/plugged/fzf"
     export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore'
 
     plugins=(

@@ -13,13 +13,14 @@ set background=dark
 set ttymouse=xterm2
 set mouse=a
 set clipboard=unnamedplus
-set backupdir=~/.cache
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
 set confirm
-set history=1000
+set history=10000
 set noswapfile
 set shell=zsh
 set hlsearch
-set ignorecase
+set infercase
 set incsearch
 
 "Default formatting
@@ -51,10 +52,17 @@ set rtp+=~/.fzf
 set updatetime=1000
 autocmd CursorHold,CursorHoldI * if @% != '' && @% != '!zsh' | update | endif
 
-
 "Buffer switching with leader+[]
 map <leader>[ :previous <CR>
 map <leader>] :next <CR>
 
 "Paste in visual mode without copying
 xnoremap p pgvy
+
+"Add plugin support (vim-plug)
+call plug#begin()
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'mg979/vim-visual-multi'
+    Plug 'preservim/nerdtree'
+call plug#end()
