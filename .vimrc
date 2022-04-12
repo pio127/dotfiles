@@ -1,29 +1,43 @@
-syntax enable 
-set nocompatible
+"Enable options
 set number
 set wrap
-set encoding=utf-8
-set laststatus=2
 set ruler 
-set relativenumber
-set noerrorbells
 set title
 set wildmenu
-set background=dark
-set ttymouse=xterm2
-set mouse=a
-set clipboard=unnamedplus
-set backupdir=~/.vim/backup
-set directory=~/.vim/tmp
 set confirm
-set history=10000
-set noswapfile
-set shell=zsh
 set hlsearch
 set infercase
 set incsearch
+set gdefault
+set breakindent
+set cursorline
 
-"Default formatting
+"Set options
+set encoding=utf-8
+set laststatus=2
+set background=dark
+set mouse=a
+set ttymouse=xterm2
+set clipboard=unnamedplus
+set history=10000
+set shell=zsh
+set showbreak=↳
+
+"Set style and color
+syntax on 
+highlight LineNr ctermfg=darkgrey ctermbg=black
+highlight clear CursorLine
+highlight CursorLineNR cterm=italic
+
+"Disable options
+set nocompatible
+set norelativenumber
+set noerrorbells
+set nobackup
+set noswapfile
+set noundofile
+
+"Default text formatting
 set tabstop=4
 set shiftwidth=4
 set autoindent
@@ -33,9 +47,6 @@ set expandtab
 autocmd Filetype c,cpp,h,hpp setlocal cindent
 autocmd Filetype make setlocal noexpandtab
 
-"Rebuild cmake project
-nnoremap <F3> : ! bash -c 'cd build && cmake .. && make -j' <CR>
-
 "Toggle paste unmodified buffer
 set pastetoggle=<F2>
 
@@ -44,9 +55,6 @@ nnoremap <CR> :noh<CR><CR>
 
 "Unix Line Endings = '\n' "
 set ff=unix
-
-"Add fzf plugin location
-set rtp+=~/.fzf
 
 "If buffer is named then autosave after 1 sec idle
 set updatetime=1000
@@ -59,6 +67,19 @@ map <leader>] :next <CR>
 "Paste in visual mode without copying
 xnoremap p pgvy
 
+"Operation repetition over visual section
+xnoremap . :norm.<CR>
+
+"Perform macro, saved in q register, over visual section using Q key
+xnoremap Q :'<,'>:normal @q<CR>
+
+"Automatic split equilization when vim is resized
+autocmd VimResized * wincmd =
+
+"Prevent change operation from overwritting main register
+nnoremap c "_c
+nnoremap C "_C
+
 "Add plugin support (vim-plug)
 call plug#begin()
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -66,3 +87,10 @@ call plug#begin()
     Plug 'mg979/vim-visual-multi'
     Plug 'preservim/nerdtree'
 call plug#end()
+
+"                 Useful vim shortcuts
+" | Ctrl-o (insert mode)  | Change to command mode once. 
+" | Ctrl-a/x              | Increment/Decrement value.
+" | Ctrl-r= (insert mode) | Calculate simple math expression.
+" | gi                    | Start insert in last insert place.
+" | o (visual selection)  | Go to the other end.
