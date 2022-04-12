@@ -11,6 +11,8 @@ set incsearch
 set gdefault
 set breakindent
 set cursorline
+set splitbelow
+set splitright
 
 "Set options
 set encoding=utf-8
@@ -22,6 +24,7 @@ set clipboard=unnamedplus
 set history=10000
 set shell=zsh
 set showbreak=↳
+set ff=unix
 
 "Set style and color
 syntax on 
@@ -52,9 +55,6 @@ set pastetoggle=<F2>
 
 "Turn off search highlight with enter key
 nnoremap <CR> :noh<CR><CR>
-
-"Unix Line Endings = '\n' "
-set ff=unix
 
 "If buffer is named then autosave after 1 sec idle
 set updatetime=1000
