@@ -80,6 +80,22 @@ autocmd VimResized * wincmd =
 nnoremap c "_c
 nnoremap C "_C
 
+"FZF search shortcuts
+nmap <Leader>f :GFiles<CR>
+nmap <Leader>F :Files<CR>
+nmap <Leader>b :Buffers<CR>
+nmap <Leader>h :History<CR>
+nmap <Leader>t :BTags<CR>
+nmap <Leader>T :Tags<CR>
+nmap <Leader>l :BLines<CR>
+nmap <Leader>L :Lines<CR>
+nmap <Leader>' :Marks<CR>
+nmap <Leader>H :Helptags!<CR>
+nmap <Leader>/ :Rg<Space>
+nmap <Leader>: :History:<CR>
+nmap <Leader>M :Maps<CR>
+nmap <Leader>s :Filetypes<CR>
+
 "Add plugin support (vim-plug)
 call plug#begin()
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
