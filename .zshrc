@@ -1,17 +1,18 @@
 # Loading oh-my-zsh with plugins
-if [ ! -d $HOME/.oh-my-zsh ]; then
-    echo "\e[0;31mDirectory \".oh-my-zsh\" was not found in the home folder.\e[0m"
+OH_MY_ZSH_PATH="$HOME/.zsh/oh-my-zsh"
+
+if [ ! -d $OH_MY_ZSH_PATH ]; then
+    echo "\e[0;31mDirectory \"$OH_MY_ZSH_PATH\" was not found.\e[0m"
 else
-    export ZSH="$HOME/.oh-my-zsh"
+    export ZSH=$OH_MY_ZSH_PATH
     export ZSH_THEME="bira"
     export FZF_BASE="$HOME/.vim/plugged/fzf"
-    export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore'
+    export FZF_DEFAULT_COMMAND='rg --files --hidden'
 
     plugins=(
         git 
         vi-mode
         fzf
-        jump
         zsh-syntax-highlighting
         zsh-interactive-cd
     )
@@ -43,9 +44,6 @@ export TERM="xterm-256color"
 
 # Main text editor
 export EDITOR="vim"
-
-# Default scripts folder
-export PATH=$PATH:"$HOME/projects/bash/scripts"
 
 # Prevent Ctrl+s terminal freeze
 stty -ixon
