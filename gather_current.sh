@@ -1,5 +1,11 @@
 #!/bin/bash
 
-cp ~/.vimrc . && echo "New .vimrc copied"
-cp ~/.zshrc . && echo "New .zshrc copied"
-cp ~/.tmux.conf . && echo "New .tmux.conf copied"
+cp ~/.vimrc                .
+cp ~/.zshrc                .
+cp ~/.tmux.conf            .
+cp ~/.config/mc/ini        .
+cp ~/.config/mc/mc.keymap  .
+cp ~/.config/mc/panels.ini .
+
+echo "Files updated:"
+git status --short
