@@ -10,7 +10,6 @@ set infercase
 set incsearch
 set gdefault
 set breakindent
-set cursorline
 set splitbelow
 set splitright
 
@@ -29,8 +28,9 @@ set ff=unix
 "Set style and color
 syntax on 
 highlight LineNr ctermfg=darkgrey ctermbg=black
-highlight clear CursorLine
-highlight CursorLineNR cterm=italic
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+highlight CursorLineNR cterm=NONE ctermbg=NONE ctermfg=yellow guibg=NONE guifg=NONE
+set cursorline
 
 "Disable options
 set nocompatible
