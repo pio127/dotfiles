@@ -1,6 +1,5 @@
 # Loading oh-my-zsh with plugins
 OH_MY_ZSH_PATH="$HOME/.zsh/oh-my-zsh"
-
 if [ ! -d $OH_MY_ZSH_PATH ]; then
     echo "\e[0;31mDirectory \"$OH_MY_ZSH_PATH\" was not found.\e[0m"
 else
@@ -13,8 +12,10 @@ else
         git 
         vi-mode
         fzf
-        zsh-syntax-highlighting
+        docker
+        docker-compose
         zsh-interactive-cd
+        zsh-syntax-highlighting
     )
 
     source $ZSH/oh-my-zsh.sh
@@ -36,14 +37,15 @@ export LESS_TERMCAP_me=$'\e[0m'
 export LESS_TERMCAP_se=$'\e[0m'       
 export LESS_TERMCAP_ue=$'\e[0m'       
 export GROFF_NO_SGR=1                 
+
+# Defaults for text viewing/editing
+export PAGER="less"
 export MANPAGER='less -s -M +Gg'
-export PAGER='less'
+export EDITOR="vim"
+export VISUAL="vim"
 
 # Setting term env variable to xterm_256color for tmux
 export TERM="xterm-256color"
-
-# Main text editor
-export EDITOR="vim"
 
 # Prevent Ctrl+s terminal freeze
 stty -ixon
