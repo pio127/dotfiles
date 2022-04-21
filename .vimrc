@@ -24,6 +24,7 @@ set history=10000
 set shell=zsh
 set showbreak=↳
 set ff=unix
+set backspace=2
 
 "Set style and color
 syntax on 
