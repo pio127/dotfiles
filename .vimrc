@@ -106,8 +106,13 @@ call plug#begin()
 call plug#end()
 
 "                 Useful vim shortcuts
-" | Ctrl-o (insert mode)  | Change to command mode once. 
+" | Ctrl-o (insert)       | Change to command mode once. 
 " | Ctrl-a/x              | Increment/Decrement value.
-" | Ctrl-r= (insert mode) | Calculate simple math expression.
+" | Ctrl-r= (insert)      | Calculate simple math expression.
 " | gi                    | Start insert in last insert place.
-" | o (visual selection)  | Go to the other end.
+" | o (visual)            | Go to the other end.
+" | Ctrl-p/n (insert)     | Basic word completion upward/downward.
+" | Ctrl-e (insert)       | Cancel word completion.
+" | Ctrl-y (insert)       | Accept word completion.
+" | Ctrl-x Ctrl-l (insert)| Whole line completion.
+" | Ctrl-x Ctrl-o (insert)| Syntax-aware omnicompletion.
