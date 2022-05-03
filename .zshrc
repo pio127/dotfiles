@@ -12,6 +12,7 @@ else
         git 
         vi-mode
         fzf
+        fzf-tab
         docker
         docker-compose
         zsh-interactive-cd
