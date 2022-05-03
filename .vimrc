@@ -103,6 +103,7 @@ call plug#begin()
     Plug 'junegunn/fzf.vim'
     Plug 'mg979/vim-visual-multi'
     Plug 'preservim/nerdtree'
+    Plug 'tpope/vim-fugitive'
 call plug#end()
 
 "                 Useful vim shortcuts
