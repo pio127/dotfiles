@@ -83,8 +83,6 @@ nnoremap C "_C
 
 "Visual selection yank doesn't go to the start
 vmap y ygv<Esc>
-"Visual selection yank doesn't go to the start
-vmap y ygv<Esc>
 
 "FZF search shortcuts
 nmap <Leader>f :GFiles<CR>
