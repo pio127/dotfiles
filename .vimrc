@@ -105,8 +105,9 @@ call plug#begin()
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'mg979/vim-visual-multi'
-    Plug 'preservim/nerdtree'
     Plug 'tpope/vim-fugitive'
+    Plug 'justinmk/vim-sneak'
+    Plug 'preservim/nerdtree'
 call plug#end()
 
 "                 Useful vim shortcuts
