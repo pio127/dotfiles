@@ -1,4 +1,4 @@
-# Loading oh-my-zsh with plugins
+# Load oh-my-zsh with additional plugins
 OH_MY_ZSH_PATH="$HOME/.zsh/oh-my-zsh"
 if [ ! -d $OH_MY_ZSH_PATH ]; then
     echo "\e[0;31mDirectory \"$OH_MY_ZSH_PATH\" was not found.\e[0m"
@@ -10,19 +10,18 @@ else
 
     plugins=(
         git 
-        vi-mode
         fzf
         fzf-tab
-        docker
-        docker-compose
-        zsh-interactive-cd
         zsh-syntax-highlighting
+        vi-mode
     )
+
+    VI_MODE_SET_CURSOR=true
 
     source $ZSH/oh-my-zsh.sh
 fi
 
-# Browsing with Midnight Commander
+# Add Midnight Commander browsing
 if [ -f /usr/share/mc/bin/mc-wrapper.sh ]; then
     alias mc=". /usr/share/mc/bin/mc-wrapper.sh"
 elif [ -f /usr/lib/mc/mc-wrapper.sh ]; then
@@ -47,6 +46,3 @@ export VISUAL="vim"
 
 # Setting term env variable to xterm_256color for tmux
 export TERM="xterm-256color"
-
-# Prevent Ctrl+s terminal freeze
-stty -ixon
