@@ -127,10 +127,10 @@ nmap <Leader>s :Filetypes<CR>
 "Vim fugitive mappings
 nmap <Leader>gs :Git<CR>
 
-
 "Open nerd tree at the current file or close nerd tree if pressed again.
 nnoremap <silent> <expr> <Leader>n g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 let g:NERDTreeShowHidden=1
+
 
 "                 Useful vanilla vim mappings:
 " | Ctrl-o (insert)       | Change to command mode once. 
