@@ -29,7 +29,7 @@ elif [ -f /usr/lib/mc/mc-wrapper.sh ]; then
     alias mc=". /usr/lib/mc/mc-wrapper.sh"
 fi
 
-# Adding colors to less in manuals
+# Add colors to manual pages opened with less
 export LESS_TERMCAP_mb=$'\e[1;31m'    
 export LESS_TERMCAP_md=$'\e[1;33m'    
 export LESS_TERMCAP_so=$'\e[01;44;37m'
@@ -39,11 +39,9 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_ue=$'\e[0m'       
 export GROFF_NO_SGR=1                 
 
-# Defaults for text viewing/editing
+# Set defaults
 export PAGER="less"
 export MANPAGER='less -s -M +Gg'
 export EDITOR="vim"
 export VISUAL="vim"
-
-# Setting term env variable to xterm_256color for tmux
 export TERM="xterm-256color"
