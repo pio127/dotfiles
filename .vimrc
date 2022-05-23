@@ -84,8 +84,8 @@ nnoremap <silent> <CR> :noh<CR><CR>
 
 "If buffer is named then autosave after 1 sec idle
 set updatetime=1000
-autocmd CursorHold,CursorHoldI * if @% != '' && @% != '!zsh' | update | endif
-
+autocmd CursorHold * if @% != '' && @% != '!zsh' | silent! update | endif
+   
 "Paste in visual mode without copying
 xnoremap p pgvy
 
