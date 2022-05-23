@@ -100,6 +100,7 @@ autocmd VimResized * wincmd =
 
 "Prevent overwritting main register
 noremap c "_c
+noremap cc "_cc
 noremap C "_C
 noremap x "_x
 noremap X "_X
@@ -134,6 +135,13 @@ nnoremap <silent> <expr> <Leader>n g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" :
 "Show hidden files in nerd tree by default
 let g:NERDTreeShowHidden=1
 
+"Add vim tmux navigator alt-key mappings
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <M-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <M-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <M-\> :TmuxNavigatePrevious<cr>
 
 "                 Useful vanilla vim mappings:
 " | Ctrl-o (insert)       | Change to command mode once. 
