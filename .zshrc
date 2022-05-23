@@ -39,6 +39,9 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_ue=$'\e[0m'       
 export GROFF_NO_SGR=1                 
 
+#Add neovim alias
+alias vim="nvim"
+
 # Set defaults
 export PAGER="less"
 export MANPAGER='less -s -M +Gg'
