@@ -10,10 +10,11 @@ else
 
     plugins=(
         git 
+        docker
+        vi-mode
         fzf
         fzf-tab
         zsh-syntax-highlighting
-        vi-mode
     )
 
     VI_MODE_SET_CURSOR=true

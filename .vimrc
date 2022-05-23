@@ -1,4 +1,4 @@
-"Add plugin support (vim-plug)
+"Add plugins 
 call plug#begin()
     Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
@@ -76,15 +76,11 @@ autocmd Filetype make setlocal noexpandtab
 set pastetoggle=<F2>
 
 "Turn off search highlight with enter key
-nnoremap <CR> :noh<CR><CR>
+nnoremap <silent> <CR> :noh<CR><CR>
 
 "If buffer is named then autosave after 1 sec idle
 set updatetime=1000
 autocmd CursorHold,CursorHoldI * if @% != '' && @% != '!zsh' | update | endif
-
-"Buffer switching with leader+[]
-map <leader>[ :previous <CR>
-map <leader>] :next <CR>
 
 "Paste in visual mode without copying
 xnoremap p pgvy
@@ -108,7 +104,7 @@ noremap <Del> "_x
 "Visual selection yank doesn't go to the start
 vmap y ygv<Esc>
 
-"FZF search mappings
+"FZF mappings
 nmap <Leader>f :GFiles<CR>
 nmap <Leader>F :Files<CR>
 nmap <Leader>b :Buffers<CR>
@@ -127,8 +123,11 @@ nmap <Leader>s :Filetypes<CR>
 "Vim fugitive mappings
 nmap <Leader>gs :Git<CR>
 
-"Open nerd tree at the current file or close nerd tree if pressed again.
-nnoremap <silent> <expr> <Leader>n g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+"Open nerd tree at the current file or close nerd tree if pressed again
+nnoremap <silent> <expr> <Leader>n g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : 
+       \ bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+
+"Show hidden files in nerd tree by default
 let g:NERDTreeShowHidden=1
 
 
