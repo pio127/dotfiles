@@ -43,8 +43,8 @@ export GROFF_NO_SGR=1
 alias vim="nvim"
 
 # Set defaults
+export EDITOR="nvim"
+export VISUAL="nvim"
 export PAGER="less"
 export MANPAGER='less -s -M +Gg'
-export EDITOR="vim"
-export VISUAL="vim"
 export TERM="xterm-256color"
