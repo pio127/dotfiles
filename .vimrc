@@ -34,14 +34,18 @@ set encoding=utf-8
 set laststatus=2
 set background=dark
 set mouse=a
-set ttymouse=xterm2
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 set history=10000
 set shell=zsh
 set showbreak=↳
 set ff=unix
 set backspace=2
 set shortmess=F
+
+"Set options not compatible with nvim
+if !has('nvim')
+    set ttymouse=xterm2
+endif
 
 "Set style and color
 syntax on 
