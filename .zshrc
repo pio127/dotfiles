@@ -48,3 +48,6 @@ export VISUAL="nvim"
 export PAGER="less"
 export MANPAGER='less -s -M +Gg'
 export TERM="xterm-256color"
+
+# Prevent ctrl+d exiting term
+set -o ignoreeof
