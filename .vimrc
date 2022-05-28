@@ -25,6 +25,7 @@ set gdefault
 set breakindent
 set splitbelow
 set splitright
+set relativenumber
 
 "Set options
 set encoding=utf-8
@@ -42,6 +43,7 @@ set shortmess=F
 "Set options not compatible with nvim
 if !has('nvim')
     set ttymouse=xterm2
+    set nocompatible
 endif
 
 "Set style and color
@@ -54,8 +56,6 @@ highlight CursorLineNR cterm=NONE ctermbg=NONE ctermfg=yellow guibg=NONE guifg=N
 set cursorline
 
 "Disable options
-set nocompatible
-set norelativenumber
 set noerrorbells
 set nobackup
 set noswapfile
@@ -75,6 +75,9 @@ autocmd Filetype make setlocal noexpandtab
 
 "Toggle paste unmodified buffer
 set pastetoggle=<F2>
+
+" Toggle relativenumber
+map <silent> <F3> :set relativenumber!<CR>
 
 "Turn off search highlight with enter key
 nnoremap <silent> <CR> :noh<CR><CR>
