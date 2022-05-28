@@ -3,14 +3,11 @@ call plug#begin()
     Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
     Plug 'mg979/vim-visual-multi'
-    Plug 'tpope/vim-fugitive'
     Plug 'justinmk/vim-sneak'
-    Plug 'noahfrederick/vim-hemisu'
-    Plug 'morhetz/gruvbox'
-    Plug 'itchyny/lightline.vim'
-    Plug 'bfrg/vim-cpp-modern'
     Plug 'christoomey/vim-tmux-navigator'
-    Plug 'preservim/nerdtree'
+    Plug 'itchyny/lightline.vim'
+    Plug 'noahfrederick/vim-hemisu'
+    Plug 'bfrg/vim-cpp-modern'
     Plug 'itchyny/vim-cursorword'
 call plug#end()
 
@@ -124,16 +121,6 @@ nmap <Leader>/ :Rg<Space>
 nmap <Leader>: :History:<CR>
 nmap <Leader>M :Maps<CR>
 nmap <Leader>s :Filetypes<CR>
-
-"Vim fugitive mappings
-nmap <Leader>gs :Git<CR>
-
-"Open nerd tree at the current file or close nerd tree if pressed again
-nnoremap <silent> <expr> <Leader>n g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : 
-       \ bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
-
-"Show hidden files in nerd tree by default
-let g:NERDTreeShowHidden=1
 
 "Add vim tmux navigator alt-key mappings
 let g:tmux_navigator_no_mappings = 1
