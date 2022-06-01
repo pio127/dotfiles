@@ -6,7 +6,6 @@ call plug#begin()
     Plug 'noahfrederick/vim-hemisu'
     Plug 'itchyny/lightline.vim'
     Plug 'mg979/vim-visual-multi'
-    Plug 'justinmk/vim-sneak'
     Plug 'itchyny/vim-cursorword'
 call plug#end()
 
@@ -128,6 +127,6 @@ nmap <Leader>s :Filetypes<CR>
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
-let g:netrw_winsize = 25
+let g:netrw_winsize = 20
 let g:netrw_altv = 1
 let g:netrw_preview  = 1
