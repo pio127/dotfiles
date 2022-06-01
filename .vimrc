@@ -25,7 +25,6 @@ set gdefault
 set breakindent
 set splitbelow
 set splitright
-set relativenumber
 
 "Set options
 set encoding=utf-8
