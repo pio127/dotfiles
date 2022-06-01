@@ -132,15 +132,3 @@ let g:netrw_winsize = 25
 let g:netrw_altv = 1
 let g:netrw_preview  = 1
 map <F4> :Lexplore <CR>
-
-"                 Useful vanilla vim mappings:
-" | Ctrl-o (insert)       | Change to command mode once. 
-" | Ctrl-a/x              | Increment/Decrement value.
-" | Ctrl-r= (insert)      | Calculate simple math expression.
-" | gi                    | Start insert in last insert place.
-" | o (visual)            | Go to the other end.
-" | Ctrl-p/n (insert)     | Basic word completion upward/downward.
-" | Ctrl-e (insert)       | Cancel word completion.
-" | Ctrl-y (insert)       | Accept word completion.
-" | Ctrl-x Ctrl-l (insert)| Whole line completion.
-" | Ctrl-x Ctrl-o (insert)| Syntax-aware omnicompletion.
