@@ -2,12 +2,12 @@
 call plug#begin()
     Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
+    Plug 'christoomey/vim-tmux-navigator'
+    Plug 'noahfrederick/vim-hemisu'
+    Plug 'itchyny/lightline.vim'
+
     Plug 'mg979/vim-visual-multi'
     Plug 'justinmk/vim-sneak'
-    Plug 'christoomey/vim-tmux-navigator'
-    Plug 'itchyny/lightline.vim'
-    Plug 'noahfrederick/vim-hemisu'
-    Plug 'bfrg/vim-cpp-modern'
     Plug 'itchyny/vim-cursorword'
 call plug#end()
 
