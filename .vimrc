@@ -71,11 +71,14 @@ autocmd Filetype make setlocal noexpandtab
 "Toggle paste unmodified buffer
 set pastetoggle=<F2>
 
-" Toggle relativenumber
+" Toggle relative number
 map <silent> <F3> :set relativenumber!<CR>
 
+" Toggle line wrapping
+map <silent> <F4> :set wrap!<CR>
+
 "Toggle netrw file explorer
-map <silent> <F4> :Lexplore <CR>
+map <silent> <F5> :Lexplore <CR>
 
 "Turn off search highlight with enter key
 nnoremap <silent> <CR> :noh<CR><CR>
