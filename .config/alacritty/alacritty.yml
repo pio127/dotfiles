@@ -3,7 +3,6 @@ window:
   title: Alacritty
   dynamic_title: false
 
-
 font:
   normal:
     family: Hack  
