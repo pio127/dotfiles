@@ -7,6 +7,9 @@ call plug#begin()
     Plug 'itchyny/lightline.vim'
     Plug 'mg979/vim-visual-multi'
     Plug 'itchyny/vim-cursorword'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'preservim/nerdtree'
 call plug#end()
 
 "Enable options
@@ -77,8 +80,8 @@ map <silent> <F3> :set relativenumber!<CR>
 " Toggle line wrapping
 map <silent> <F4> :set wrap!<CR>
 
-"Toggle netrw file explorer
-map <silent> <F5> :Lexplore <CR>
+"Toggle file explorer
+nnoremap <silent> <F5> :NERDTreeToggle<CR>
 
 "Turn off search highlight with enter key
 nnoremap <silent> <CR> :noh<CR><CR>
@@ -108,7 +111,6 @@ noremap cc "_cc
 noremap C "_C
 noremap x "_x
 noremap X "_X
-noremap <Del> "_x
 
 "Add fzf.vim mappings
 nmap <Leader>f :GFiles<CR>
@@ -125,14 +127,6 @@ nmap <Leader>/ :Rg<Space>
 nmap <Leader>: :History:<CR>
 nmap <Leader>M :Maps<CR>
 nmap <Leader>s :Filetypes<CR>
-
-"Netrw configuration
-let g:netrw_banner=0
-let g:netrw_liststyle=3
-let g:netrw_browse_split=4
-let g:netrw_winsize=20
-let g:netrw_altv=1
-let g:netrw_preview=1
 
 "Exit insert mode using jk and prevent cursor to go back one character
 inoremap jk <c-c>`^
