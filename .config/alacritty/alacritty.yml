@@ -32,7 +32,7 @@ colors:
     foreground: '0xffffff'
   normal:
     black:   '0x666666'
-    red:     '0xaf005f'
+    red:     '0xff6666'
     green:   '0x5faf00'
     yellow:  '0xd7af5f'
     blue:    '0x5fafd7'
