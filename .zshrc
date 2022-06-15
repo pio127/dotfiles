@@ -11,13 +11,10 @@ else
     plugins=(
         git 
         docker
-        vi-mode
+        docker-compose
         fzf
         fzf-tab
-        zsh-syntax-highlighting
     )
-
-    VI_MODE_SET_CURSOR=true
 
     source $ZSH/oh-my-zsh.sh
 fi
