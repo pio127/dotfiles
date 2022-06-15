@@ -3,7 +3,7 @@ call plug#begin()
     Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
     Plug 'christoomey/vim-tmux-navigator'
-    Plug 'noahfrederick/vim-hemisu'
+    Plug 'morhetz/gruvbox'
     Plug 'itchyny/lightline.vim'
     Plug 'mg979/vim-visual-multi'
     Plug 'itchyny/vim-cursorword'
@@ -51,7 +51,7 @@ endif
 
 "Set style and color
 syntax on 
-colorscheme hemisu
+colorscheme gruvbox
 highlight Normal ctermfg=NONE ctermbg=NONE
 highlight LineNr ctermfg=black ctermbg=NONE
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
