@@ -3,6 +3,10 @@
 	email = Piotr
 
 [core]
+    excludesfile = ~/.gitignore_global
+    hooksPath = ~/.git_hooks_global
+
+[core]
     pager = delta
 
 [interactive]
