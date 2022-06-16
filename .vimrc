@@ -7,8 +7,6 @@ call plug#begin()
     Plug 'itchyny/lightline.vim'
     Plug 'mg979/vim-visual-multi'
     Plug 'itchyny/vim-cursorword'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
     Plug 'preservim/nerdtree'
 call plug#end()
 
