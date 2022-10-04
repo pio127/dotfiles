@@ -8,6 +8,8 @@ call plug#begin()
     Plug 'mg979/vim-visual-multi'
     Plug 'itchyny/vim-cursorword'
     Plug 'preservim/nerdtree'
+    Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'nvim-orgmode/orgmode'
 call plug#end()
 
 "Enable options
