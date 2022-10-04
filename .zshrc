@@ -36,9 +36,10 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_ue=$'\e[0m'       
 export GROFF_NO_SGR=1                 
 
-#Add aliases
+# Add aliases
 alias vim="nvim"
 alias cls="clear -x"
+alias tgd="tmux resize-pane -Z && git diff && tmux resize-pane -Z"
 
 # Set defaults
 export EDITOR="nvim"
