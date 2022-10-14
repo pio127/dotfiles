@@ -1,5 +1,5 @@
 window:
-  opacity: 0.80
+  opacity: 0.85
   title: Alacritty
   dynamic_title: false
   decorations: none
@@ -39,7 +39,7 @@ colors:
     yellow:  '0xd7af5f'
     blue:    '0x5fafd7'
     magenta: '0x808080'
-    cyan:    '0xd7875f'
+    cyan:    '0xffaa00'
     white:   '0xd0d0d0'
   bright:
     black:   '0x585858'
