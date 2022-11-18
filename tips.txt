@@ -1,6 +1,7 @@
               Useful vanilla vim mappings:
 Ctrl-o (insert)        | Change to command mode once. 
 Ctrl-a/x               | Increment/Decrement value.
+g Ctrl-a/x             | Increment/Decrement values in growing order.
 Ctrl-r= (insert)       | Calculate simple math expression.
 gi                     | Start insert in last insert place.
 o (visual)             | Go to the other end.
