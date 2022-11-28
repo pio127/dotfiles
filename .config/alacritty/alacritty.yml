@@ -24,7 +24,10 @@ font:
   size: 11
 
 shell:
-  program: /bin/zsh
+  program: /usr/bin/tmux
+  args:
+    - new
+    - -AsLocal
 
 draw_bold_text_with_bright_colors: false
 
