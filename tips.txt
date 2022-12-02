@@ -1,4 +1,4 @@
-              Useful vanilla vim mappings:
+              Useful vim mappings:
 Ctrl-o (insert)        | Change to command mode once. 
 Ctrl-a/x               | Increment/Decrement value.
 g Ctrl-a/x             | Increment/Decrement values in growing order.
@@ -10,3 +10,6 @@ Ctrl-e (insert)        | Cancel word completion.
 Ctrl-y (insert)        | Accept word completion.
 Ctrl-x Ctrl-l (insert) | Whole line completion.
 Ctrl-x Ctrl-o (insert) | Syntax-aware omnicompletion.
+
+              Useful emacs mappings:
+Ctrl-c Ctrl-e lp       | Save org-mode file to PDF
