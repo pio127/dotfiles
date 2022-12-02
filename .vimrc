@@ -1,4 +1,4 @@
-"Add plugins 
+"Add plugins
 call plug#begin()
     Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
@@ -75,10 +75,10 @@ autocmd Filetype make setlocal noexpandtab
 "Toggle paste unmodified buffer
 set pastetoggle=<F2>
 
-" Toggle relative number
+"Toggle relative number
 map <silent> <F3> :set relativenumber!<CR>
 
-" Toggle line wrapping
+"Toggle line wrapping
 map <silent> <F4> :set wrap!<CR>
 
 "Toggle file explorer

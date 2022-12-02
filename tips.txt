@@ -12,4 +12,4 @@ Ctrl-x Ctrl-l (insert) | Whole line completion.
 Ctrl-x Ctrl-o (insert) | Syntax-aware omnicompletion.
 
               Useful emacs mappings:
-Ctrl-c Ctrl-e lp       | Save org-mode file to PDF
+Ctrl-c Ctrl-e lp       | Save org-mode file to PDF.
