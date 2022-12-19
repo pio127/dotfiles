@@ -7,6 +7,7 @@ else
     export ZSH_THEME="bira"
     export FZF_BASE="$HOME/.vim/plugged/fzf"
     export FZF_DEFAULT_COMMAND='rg --files --hidden'
+    export FZF_CTRL_T_COMMAND='rg --files --hidden'
 
     plugins=(
         git 
