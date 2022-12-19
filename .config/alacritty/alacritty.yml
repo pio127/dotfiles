@@ -33,29 +33,6 @@ shell:
     - -AsLocal
 
 draw_bold_text_with_bright_colors: false
-
-#colors:
-#  primary:
-#    background: '0x000000'
-#    foreground: '0xffffff'
-#  normal:
-#    black:   '0x666666'
-#    red:     '0xff6666'
-#    green:   '0x5faf00'
-#    yellow:  '0xd7af5f'
-#    blue:    '0x5fafd7'
-#    magenta: '0x808080'
-#    cyan:    '0xffaa00'
-#    white:   '0xd0d0d0'
-#  bright:
-#    black:   '0x585858'
-#    red:     '0x5faf5f'
-#    green:   '0xafd700'
-#    yellow:  '0xe78a4e'
-#    blue:    '0xffaf00'
-#    magenta: '0xffaf00'
-#    cyan:    '0x00afaf'
-#    white:   '0x5f8787'
  
 colors:
   primary:
@@ -63,19 +40,19 @@ colors:
     foreground: '#dddddd'
   normal:
     black:   '#000000'
-    red:     '#cc0403'
-    green:   '#19cb00'
+    red:     '#ff6666'
+    green:   '#5faf00'
     yellow:  '#cecb00'
-    blue:    '#0d73cc'
+    blue:    '#5fafd7'
     magenta: '#cb1ed1'
     cyan:    '#0dcdcd'
     white:   '#dddddd'
   bright:
     black:   '#767676'
-    red:     '#f2201f'
-    green:   '#23fd00'
+    red:     '#5faf5f'
+    green:   '#afd700'
     yellow:  '#fffd00'
-    blue:    '#1a8fff'
+    blue:    '#ffaf00'
     magenta: '#fd28ff'
     cyan:    '#14ffff'
     white:   '#ffffff'
