@@ -51,10 +51,10 @@ if !has('nvim')
 endif
 
 "Set style and color
-syntax on 
+syntax enable 
 colorscheme gruvbox
 highlight Normal ctermfg=NONE ctermbg=NONE
-highlight LineNr ctermfg=black ctermbg=NONE
+highlight LineNr ctermfg=237 ctermbg=NONE
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 highlight CursorLineNR cterm=NONE ctermbg=NONE ctermfg=yellow guibg=NONE guifg=NONE
 set cursorline
