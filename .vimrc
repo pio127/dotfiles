@@ -128,3 +128,10 @@ nmap <Leader>s :Filetypes<CR>
 
 "Exit insert mode using jk and prevent cursor to go back one character
 inoremap jk <c-c>`^
+
+" Save and restore view of buffers
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave *.* mkview
+  autocmd BufWinEnter *.* silent! loadview
+augroup END
