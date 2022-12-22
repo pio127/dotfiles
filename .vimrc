@@ -135,3 +135,15 @@ augroup remember_folds
   autocmd BufWinLeave *.* mkview
   autocmd BufWinEnter *.* silent! loadview
 augroup END
+
+" Use tmux buffer as a clipboard
+let g:clipboard = {
+    \   'name': 'tmux',
+    \   'copy': {
+    \      '+': ['tmux', 'load-buffer', '-'],
+    \    },
+    \   'paste': {
+    \      '+': ['tmux', 'save-buffer', '-'],
+    \   },
+    \   'cache_enabled': 0,
+    \ }
