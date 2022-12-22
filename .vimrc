@@ -147,3 +147,7 @@ let g:clipboard = {
     \   },
     \   'cache_enabled': 0,
     \ }
+
+"Combine half-page navigation with cursor centering
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
