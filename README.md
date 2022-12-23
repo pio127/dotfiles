@@ -11,9 +11,10 @@ Main tools:
 
 Installation:
 ```bash
+# Debian-based
 apt install zsh neovim tmux mc fzf ripgrep 
-```
-```bash
+
+# Arch-based
 pacman -Sy zsh neovim tmux mc fzf ripgrep 
 ```
 
@@ -26,10 +27,21 @@ Plugin managers:
 Installation:
 ```bash
 # Create directories
-mkdir ~/.zsh/ ~/.vim/autoload ~/.tmux/plugins
+mkdir -p $HOME/.zsh/oh-my-zsh/ $HOME/.vim/autoload $HOME/.tmux/plugins
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+# Install oh-my-zsh
+ZSH="$HOME/.zsh/oh-my-zsh" sh -c \
+    "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) \
+    --keep-zshrc \
+    --unattended"
+
+# Install fzf-tab zsh plugin
+git clone https://github.com/Aloxaf/fzf-tab $HOME/.zsh/oh-my-zsh/custom/plugins/fzf-tab
+
+# Install vim-plug
+curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Install tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 ```
