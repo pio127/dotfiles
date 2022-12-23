@@ -1,5 +1,6 @@
 "Add plugins
 call plug#begin()
+    Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'morhetz/gruvbox'
