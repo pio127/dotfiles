@@ -15,7 +15,7 @@ Installation:
 apt install zsh neovim tmux mc fzf ripgrep 
 
 # Arch-based
-pacman -Sy zsh neovim tmux mc fzf ripgrep 
+pacman -S zsh neovim tmux mc fzf ripgrep 
 ```
 
 ## Plugins
@@ -27,7 +27,7 @@ Plugin managers:
 Installation:
 ```bash
 # Create directories
-mkdir -p $HOME/.zsh/oh-my-zsh/ $HOME/.vim/autoload $HOME/.tmux/plugins
+mkdir -p $HOME/.{zsh/oh-my-zsh,vim/autoload,tmux/plugins}
 
 # Install oh-my-zsh
 ZSH="$HOME/.zsh/oh-my-zsh" sh -c \
