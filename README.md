@@ -2,12 +2,12 @@
 
 ## Tools
 Main tools:
-1. zsh
-2. neovim
-3. tmux
-4. mc
-5. fzf
-6. rg
+1. zsh (https://github.com/zsh-users/zsh)
+2. neovim (https://github.com/neovim/neovim)
+3. tmux (https://github.com/tmux/tmux)
+4. mc (https://github.com/MidnightCommander/mc)
+5. fzf (https://github.com/junegunn/fzf)
+6. rg (https://github.com/BurntSushi/ripgrep)
 
 Installation:
 ```bash
