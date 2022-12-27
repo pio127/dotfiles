@@ -34,8 +34,8 @@ shell:
 
 colors:
   primary:
-    background: '#101010'
-    foreground: '#c6c6c4'
+    background: '#040404'
+    foreground: '#c8c8c8'
   normal:
     black:   '#000000'
     red:     '#ff6666'
