@@ -36,6 +36,7 @@ set ff=unix
 set backspace=2
 set shortmess=F
 set matchpairs+=<:>
+set relativenumber
 
 "Disable options
 set noerrorbells
