@@ -71,10 +71,10 @@ autocmd Filetype c,cpp,h,hpp setlocal cindent
 autocmd Filetype make setlocal noexpandtab
 
 "Toggle relative number
-map <silent> <F2> :set relativenumber!<CR>
+map <silent> <F2> :set relativenumber! \| :echom "Relative number -> " . &relativenumber<CR>
 
 "Toggle line wrapping
-map <silent> <F3> :set wrap!<CR>
+map <silent> <F3> :set wrap! \| :echom "Line wrapping -> " . &wrap<CR>
 
 "Toggle file explorer
 nnoremap <silent> <F4> :NERDTreeToggle<CR>
