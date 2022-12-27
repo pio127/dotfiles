@@ -1,7 +1,7 @@
 # Load oh-my-zsh with additional plugins
 OH_MY_ZSH_PATH="$HOME/.zsh/oh-my-zsh"
 if [ ! -d $OH_MY_ZSH_PATH ]; then
-    echo "\e[0;31mDirectory \"$OH_MY_ZSH_PATH\" was not found.\e[0m"
+    echo "Directory $OH_MY_ZSH_PATH was not found. Loading without oh-my-zsh."
 else
     export ZSH=$OH_MY_ZSH_PATH
     export ZSH_THEME="bira"
