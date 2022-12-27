@@ -1,9 +1,9 @@
 [user]
-	name = Piotr
-	email = Piotr
+    name = Name
+    email = name@domain
 
 [core]
-    excludesfile = ~/.gitignore_global
+    excludesfile = ~/.git_global/.gitignore_global
     hooksPath = ~/.git_global/.git_hooks
 
 [core]
