@@ -2,11 +2,15 @@
 
 # Promts and then overwrites dotfiles in the home directory.
 
-read -p "Start dotfiles installation? (y/n): " choice
-if [ $choice == "y" ]; then
+CHOICE=""
+
+read -p "Start dotfiles installation? (y/n): " CHOICE
+if [ $CHOICE == "y" ]; then
     echo "Starting installation!"
-elif [ $choice == "n" ]; then
+elif [ $CHOICE == "n" ]; then
     echo "Aborting installation!"
+    exit 0
 else
     echo "Unknown option"
+    exit 1
 fi
