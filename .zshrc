@@ -1,11 +1,10 @@
 # Load oh-my-zsh with additional plugins
-export OH_MY_ZSH_PATH="$HOME/.zsh/oh-my-zsh"
-
-if [ ! -d $OH_MY_ZSH_PATH ]; then
-    echo "Directory $OH_MY_ZSH_PATH was not found. Loading without oh-my-zsh."
+OH_MY_ZSH_DIRECTORY="$HOME/.zsh/oh-my-zsh"
+if [ ! -d $OH_MY_ZSH_DIRECTORY ]; then
+    echo "Directory \"$OH_MY_ZSH_DIRECTORY\" not found. Loading without oh-my-zsh."
 else
-    export ZSH=$OH_MY_ZSH_PATH
-    export ZSH_THEME="bira"
+    export ZSH=$OH_MY_ZSH_DIRECTORY
+    export ZSH_THEME='bira'
 
     # Use rip-grep as a search tool
     export FZF_DEFAULT_COMMAND='rg --files --hidden'
@@ -19,7 +18,7 @@ else
     fi
 
     plugins=(
-        git 
+        git
         docker
         docker-compose
         fzf
@@ -37,14 +36,14 @@ elif [ -f /usr/lib/mc/mc-wrapper.sh ]; then
 fi
 
 # Add colors to manual pages opened with less
-export LESS_TERMCAP_mb=$'\e[1;31m'    
-export LESS_TERMCAP_md=$'\e[1;33m'    
+export LESS_TERMCAP_mb=$'\e[1;31m'
+export LESS_TERMCAP_md=$'\e[1;33m'
 export LESS_TERMCAP_so=$'\e[01;44;37m'
-export LESS_TERMCAP_us=$'\e[01;37m'   
-export LESS_TERMCAP_me=$'\e[0m'       
-export LESS_TERMCAP_se=$'\e[0m'       
-export LESS_TERMCAP_ue=$'\e[0m'       
-export GROFF_NO_SGR=1                 
+export LESS_TERMCAP_us=$'\e[01;37m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export GROFF_NO_SGR=1
 
 # Add aliases
 alias vim="nvim"
