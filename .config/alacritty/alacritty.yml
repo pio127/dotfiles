@@ -32,12 +32,10 @@ shell:
     - new
     - -AsLocal
 
-draw_bold_text_with_bright_colors: false
- 
 colors:
   primary:
-    background: '#000000'
-    foreground: '#dddddd'
+    background: '#101010'
+    foreground: '#c6c6c4'
   normal:
     black:   '#000000'
     red:     '#ff6666'
