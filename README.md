@@ -20,9 +20,9 @@ pacman -S zsh neovim tmux mc fzf ripgrep
 
 ## Plugins
 Plugin managers:
-1. oh-my-zsh
-2. vim-plug
-3. tpm
+1. oh-my-zsh (https://github.com/ohmyzsh/ohmyzsh)
+2. vim-plug (https://github.com/junegunn/vim-plug)
+3. tpm (https://github.com/tmux-plugins/tpm)
 
 Installation:
 ```bash
