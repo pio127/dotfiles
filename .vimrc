@@ -79,6 +79,9 @@ map <silent> <F3> :set wrap! \| :echom "Line wrapping -> " . &wrap<CR>
 "Toggle file explorer
 nnoremap <silent> <F4> :NERDTreeToggle<CR>
 
+"Save current vim session
+nnoremap <silent> <F5> :mksession! \| :echom "[QUICKSAVE] Vim session file created!"<CR>
+
 "Turn off search highlight with enter key
 nnoremap <silent> <CR> :noh<CR><CR>
 
