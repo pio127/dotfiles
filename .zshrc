@@ -1,13 +1,22 @@
 # Load oh-my-zsh with additional plugins
-OH_MY_ZSH_PATH="$HOME/.zsh/oh-my-zsh"
+export OH_MY_ZSH_PATH="$HOME/.zsh/oh-my-zsh"
+
 if [ ! -d $OH_MY_ZSH_PATH ]; then
     echo "Directory $OH_MY_ZSH_PATH was not found. Loading without oh-my-zsh."
 else
     export ZSH=$OH_MY_ZSH_PATH
     export ZSH_THEME="bira"
-    export FZF_BASE="$HOME/.vim/plugged/fzf"
+
+    # Use rip-grep as a search tool
     export FZF_DEFAULT_COMMAND='rg --files --hidden'
     export FZF_CTRL_T_COMMAND='rg --files --hidden'
+
+    # Use fzf already downloaded by vim-plug (call install script to build fzf binary)
+    if [ -d "$HOME/.local/share/nvim/plugged/fzf" ]; then
+        export FZF_BASE="$HOME/.local/share/nvim/plugged/fzf"
+    elif [ -d "$HOME/.vim/plugged/fzf" ]; then
+        export FZF_BASE="$HOME/.vim/plugged/fzf"
+    fi
 
     plugins=(
         git 
@@ -49,5 +58,5 @@ export PAGER="less"
 export MANPAGER='less -s -M +Gg'
 export TERM="xterm-256color"
 
-# Prevent ctrl+d exiting term
+# Prevent ctrl+d shell exit behaviour
 set -o ignoreeof
