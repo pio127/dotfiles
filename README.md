@@ -1,7 +1,7 @@
 # Dotfiles
 
 ## Tools
-Main tools:
+Main:
 1. zsh (https://github.com/zsh-users/zsh)
 2. neovim (https://github.com/neovim/neovim)
 3. tmux (https://github.com/tmux/tmux)
@@ -17,6 +17,11 @@ apt install zsh neovim tmux mc fzf ripgrep
 # Arch-based
 pacman -S zsh neovim tmux mc fzf ripgrep 
 ```
+
+Other:
+1. alacritty (https://github.com/alacritty/alacritty)
+2. i3-gaps (https://github.com/Airblader/i3)
+3. delta (https://github.com/dandavison/delta)
 
 ## Plugins
 Plugin managers:
