@@ -54,7 +54,6 @@ export GROFF_NO_SGR=1
 # Add aliases
 alias vim="nvim"
 alias cls="clear -x"
-alias tgd="tmux resize-pane -Z && git diff && tmux resize-pane -Z"
 
 # Set defaults
 export EDITOR="nvim"
