@@ -10,11 +10,17 @@ else
     export FZF_DEFAULT_COMMAND='rg --files --hidden'
     export FZF_CTRL_T_COMMAND='rg --files --hidden'
 
-    # Use fzf already downloaded by vim-plug (call install script to build fzf binary)
+    # Use fzf already downloaded by vim-plug
     if [ -d "$HOME/.local/share/nvim/plugged/fzf" ]; then
         export FZF_BASE="$HOME/.local/share/nvim/plugged/fzf"
     elif [ -d "$HOME/.vim/plugged/fzf" ]; then
         export FZF_BASE="$HOME/.vim/plugged/fzf"
+    fi
+
+    # Check if fzf binary needs to be built/downloaded
+    if [ -d "$FZF_BASE" ] && [ ! -f "$FZF_BASE/bin/fzf" ]; then
+        echo "Missing fzf binary in \"$FZF_BASE/bin\"."
+        echo "Use install script to download the binary or run make install (requires go compiler)."
     fi
 
     plugins=(
