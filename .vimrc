@@ -67,9 +67,18 @@ set shiftwidth=4
 set autoindent
 set expandtab
 
+"Set orgmode highlighting options
+function OrgModeOptions()
+    syn keyword orgTodo TODO
+    syn keyword orgDone DONE
+    hi orgTodo ctermfg=darkred
+    hi orgDone ctermfg=darkgreen
+endfunction
+
 "Filetype specific formatting
 autocmd Filetype c,cpp,h,hpp setlocal cindent
 autocmd Filetype make setlocal noexpandtab
+autocmd Filetype org call OrgModeOptions()
 
 "Toggle relative number
 map <silent> <F2> :set relativenumber! \| :echom "Relative number -> " . &relativenumber<CR>
