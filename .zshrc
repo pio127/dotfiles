@@ -64,3 +64,6 @@ export TERM="xterm-256color"
 
 # Prevent ctrl+d shell exit behaviour
 set -o ignoreeof
+
+# Extend commands history
+export SAVEHIST=1000000
