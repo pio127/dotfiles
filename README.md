@@ -51,9 +51,9 @@ curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 ```
 
-## Useful mappings list
+## Useful shortcuts list
 ### Vim
-| Mapping       | Mode   | Description                                 |
+| Keys          | Mode   | Description                                 |
 | ------------- | ------ | ------------------------------------------- |
 | Ctrl-o        | INSERT | Change to normal mode once.                 |
 | Ctrl-a/x      | NORMAL | Increment/Decrement value.                  |
@@ -68,6 +68,6 @@ git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 | Ctrl-x Ctrl-o | INSERT | Syntax-aware omnicompletion.                |
 
 ### Emacs
-| Mapping                | Description                                 |
+| Keys                   | Description                                 |
 | ---------------------- | ------------------------------------------- |
 | Ctrl-c Ctrl-e lp       | Save org-mode file to PDF.                  |
