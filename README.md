@@ -60,7 +60,7 @@ git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 | g Ctrl-a/x    | NORMAL | Increment/Decrement values in growing order.|
 | Ctrl-r=       | INSERT | Calculate simple math expression.           |
 | gi            | NORMAL | Start insert in last insert place.          |
-| o             | VISUAL | Go to the other end.                        |
+| o             | VISUAL | Go to the other end of selection.           |
 | Ctrl-p/n      | NORMAL | Basic word completion upward/downward.      |
 | Ctrl-e        | INSERT | Cancel word completion.                     |
 | Ctrl-y        | INSERT | Accept word completion.                     |
@@ -71,3 +71,14 @@ git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 | Keys                   | Description                                 |
 | ---------------------- | ------------------------------------------- |
 | Ctrl-c Ctrl-e lp       | Save org-mode file to PDF.                  |
+
+### Midnight Commander
+| Keys                   | Description                                 |
+| ---------------------- | ------------------------------------------- |
+| Esc+0123456789         | Function keys alternative.                  |
+| Ctrl-x q               | Toggle file preview mode.                   |
+| Alt-,                  | Toggle show hidden files.                   |
+| Alt-.                  | Toggle vetical/horizontal panel split.      |
+| Alt-i                  | Set other panel to the same as current.     |
+| Alt-o                  | Open selected directory in other panel.     |
+| Ctrl-o                 | Toggle subshell view.                       |
