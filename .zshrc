@@ -1,7 +1,15 @@
 # Load oh-my-zsh with additional plugins
 OH_MY_ZSH_DIRECTORY="$HOME/.zsh/oh-my-zsh"
+
 if [ ! -d $OH_MY_ZSH_DIRECTORY ]; then
     echo "Directory \"$OH_MY_ZSH_DIRECTORY\" not found. Loading without oh-my-zsh."
+    # Add autocompletion
+    # Add fzf
+    # Add fzf-tab
+    # Add customized prompt
+    # Add git aliases
+    # Add cd aliases
+
 else
     export ZSH=$OH_MY_ZSH_DIRECTORY
     export ZSH_THEME='bira'
