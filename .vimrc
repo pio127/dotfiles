@@ -2,18 +2,16 @@
 call plug#begin()
     Plug 'junegunn/fzf'
     Plug 'junegunn/fzf.vim'
-    Plug 'christoomey/vim-tmux-navigator'
     Plug 'morhetz/gruvbox'
-    Plug 'itchyny/lightline.vim'
-    Plug 'mg979/vim-visual-multi'
+    Plug 'christoomey/vim-tmux-navigator'
     Plug 'itchyny/vim-cursorword'
-    Plug 'preservim/nerdtree'
+    Plug 'justinmk/vim-sneak'
 call plug#end()
 
 "Enable options
 set number
 set wrap
-set ruler 
+set ruler
 set title
 set wildmenu
 set confirm
@@ -56,10 +54,43 @@ endif
 syntax enable 
 colorscheme gruvbox
 highlight Normal ctermfg=NONE ctermbg=NONE
-highlight LineNr ctermfg=237 ctermbg=NONE
+highlight LineNr ctermfg=236 ctermbg=NONE
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-highlight CursorLineNR cterm=NONE ctermbg=NONE ctermfg=yellow guibg=NONE guifg=NONE
+highlight CursorLineNR cterm=NONE ctermbg=NONE ctermfg=220 guibg=NONE guifg=NONE
 set cursorline
+
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+let g:currentmode={
+       \ 'n'  : 'NORMAL ',
+       \ 'v'  : 'VISUAL ',
+       \ 'V'  : 'V·Line ',
+       \ "\<C-V>" : 'V·Block ',
+       \ 'i'  : 'INSERT ',
+       \ 'R'  : 'R ',
+       \ 'Rv' : 'V·Replace ',
+       \ 'c'  : 'Command ',
+       \ 't'  : 'Terminal ',
+       \}
+
+set statusline=
+set statusline+=\ %{toupper(g:currentmode[mode()])}
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#Normal#
+set statusline+=\ %f
+set statusline+=:%l
+set statusline+=%=
+set statusline+=\%y
+set statusline+=\[%{&fileencoding?&fileencoding:&encoding}\]
+set statusline+=\[%{&fileformat}\]
 
 "Default text formatting
 set tabstop=4
