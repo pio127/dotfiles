@@ -88,6 +88,7 @@ set statusline+=%#Normal#
 set statusline+=\ %f
 set statusline+=:%l
 set statusline+=%=
+set statusline+=%{&modified?'[+]':''}
 set statusline+=\%y
 set statusline+=\[%{&fileencoding?&fileencoding:&encoding}\]
 set statusline+=\[%{&fileformat}\]
