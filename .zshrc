@@ -1,45 +1,26 @@
-# Load oh-my-zsh with additional plugins
-OH_MY_ZSH_DIRECTORY="$HOME/.zsh/oh-my-zsh"
+# Add autocompletion
+autoload -U compinit; compinit
 
-if [ ! -d $OH_MY_ZSH_DIRECTORY ]; then
-    echo "Directory \"$OH_MY_ZSH_DIRECTORY\" not found. Loading without oh-my-zsh."
-    # Add autocompletion
-    # Add fzf
-    # Add fzf-tab
-    # Add customized prompt
-    # Add git aliases
-    # Add cd aliases
+# Add fzf
+if [ -f "$HOME/.fzf.zsh" ]; then
+    source "$HOME/.fzf.zsh"
+    export FZF_DEFAULT_COMMAND='rg --files --ignore-vcs --hidden'
+    export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    export FZF_DEFAULT_OPTS="--height 60% \
+        --border sharp \
+        --layout reverse \
+        --color '$FZF_COLORS' \
+        --prompt '∷ ' \
+        --pointer ▶ \
+        --marker ⇒"
+    export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 10'"
+    export FZF_COMPLETION_DIR_COMMANDS="cd pushd rmdir tree ls"
+fi
 
-else
-    export ZSH=$OH_MY_ZSH_DIRECTORY
-    export ZSH_THEME='bira'
-
-    # Use rip-grep as a search tool
-    export FZF_DEFAULT_COMMAND='rg --files --hidden'
-    export FZF_CTRL_T_COMMAND='rg --files --hidden'
-
-    # Use fzf already downloaded by vim-plug
-    if [ -d "$HOME/.local/share/nvim/plugged/fzf" ]; then
-        export FZF_BASE="$HOME/.local/share/nvim/plugged/fzf"
-    elif [ -d "$HOME/.vim/plugged/fzf" ]; then
-        export FZF_BASE="$HOME/.vim/plugged/fzf"
-    fi
-
-    # Check if fzf binary needs to be built/downloaded
-    if [ -d "$FZF_BASE" ] && [ ! -f "$FZF_BASE/bin/fzf" ]; then
-        echo "Missing fzf binary in \"$FZF_BASE/bin\"."
-        echo "Use install script to download the binary or run make install (requires go compiler)."
-    fi
-
-    plugins=(
-        git
-        docker
-        docker-compose
-        fzf
-        fzf-tab
-    )
-
-    source $ZSH/oh-my-zsh.sh
+# Add fzf-tab
+if [ -d "$HOME/.zsh/fzf-tab/" ]; then
+    source "$HOME/.zsh/fzf-tab/fzf-tab.plugin.zsh"
 fi
 
 # Add Midnight Commander browsing
@@ -49,29 +30,48 @@ elif [ -f /usr/lib/mc/mc-wrapper.sh ]; then
     alias mc=". /usr/lib/mc/mc-wrapper.sh"
 fi
 
-# Add colors to manual pages opened with less
-export LESS_TERMCAP_mb=$'\e[1;31m'
-export LESS_TERMCAP_md=$'\e[1;33m'
-export LESS_TERMCAP_so=$'\e[01;44;37m'
-export LESS_TERMCAP_us=$'\e[01;37m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_ue=$'\e[0m'
-export GROFF_NO_SGR=1
-
-# Add aliases
-alias vim="nvim"
-alias cls="clear -x"
+# Add prompt
+#RPROMPT="%t"
+PS1='%F{yello}%n@%m%F{white}[%F{green}%/%f] $ '
 
 # Set defaults
 export EDITOR="nvim"
 export VISUAL="nvim"
+export MANPAGER='nvim +Man!'
 export PAGER="less"
-export MANPAGER='less -s -M +Gg'
 export TERM="xterm-256color"
+export HISTFILE="$HOME/.zsh_history"
+export SAVEHIST=100000
+export HISTSIZE=100000 
+
+# Add dot expansion
+magic-dot() {
+  if [[ $LBUFFER = (|*[[:blank:]/]).. ]]; then
+    repeat ${NUMERIC-1} LBUFFER+=/..
+  else
+    zle self-insert
+  fi
+}
+zle -N magic-dot
+bindkey . magic-dot
+
+# Add aliases
+alias vi="nvim"
+alias cls="clear -x"
+alias l="ls -lha"
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -iv'
+alias duhast='du -sh * | sort -hr'
+alias gst='git status'
+alias ga='git add'
+alias gp='git push'
+alias gpo='git pull origin'
+alias gb='git branch '
+alias gc='git commit'
+alias gd='git diff'
+alias gco='git checkout '
+alias glog='git log --graph --abbrev-commit --oneline --decorate'
 
 # Prevent ctrl+d shell exit behaviour
 set -o ignoreeof
-
-# Extend commands history
-export SAVEHIST=1000000
