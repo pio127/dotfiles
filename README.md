@@ -1,13 +1,13 @@
 # Dotfiles
 
 ## Tools
-Main:
 1. zsh (https://github.com/zsh-users/zsh)
 2. neovim (https://github.com/neovim/neovim)
 3. tmux (https://github.com/tmux/tmux)
 4. mc (https://github.com/MidnightCommander/mc)
 5. fzf (https://github.com/junegunn/fzf)
 6. rg (https://github.com/BurntSushi/ripgrep)
+7. delta (https://github.com/dandavison/delta)
 
 Installation:
 ```bash
@@ -18,37 +18,25 @@ apt install zsh neovim tmux mc fzf ripgrep
 pacman -S zsh neovim tmux mc fzf ripgrep 
 ```
 
-Other:
-1. alacritty (https://github.com/alacritty/alacritty)
-2. i3-gaps (https://github.com/Airblader/i3)
-3. delta (https://github.com/dandavison/delta)
-
 ## Plugins
-Plugin managers:
-1. oh-my-zsh (https://github.com/ohmyzsh/ohmyzsh)
-2. vim-plug (https://github.com/junegunn/vim-plug)
-3. tpm (https://github.com/tmux-plugins/tpm)
+1. vim-plug (https://github.com/junegunn/vim-plug)
+3. fzf-tab (https://github.com/Aloxaf/fzf-tab)
+3. tmux-ressurect (https://github.com/tmux-plugins/tmux-resurrect)
 
 Installation:
 ```bash
 # Create directories
-mkdir -p $HOME/.{zsh/oh-my-zsh,vim/autoload,tmux/plugins}
-
-# Install oh-my-zsh
-ZSH="$HOME/.zsh/oh-my-zsh" sh -c \
-    "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) \
-    --keep-zshrc \
-    --unattended"
-
-# Install fzf-tab zsh plugin
-git clone https://github.com/Aloxaf/fzf-tab $HOME/.zsh/oh-my-zsh/custom/plugins/fzf-tab
+mkdir -p $HOME/.{zsh,vim,tmux}
 
 # Install vim-plug
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Install tmux plugin manager
-git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+# Install fzf-tab plugin
+git clone https://github.com/Aloxaf/fzf-tab $HOME/.zsh/fzf-tab
+
+# Install tmux-ressurect plugin
+git clone https://github.com/tmux-plugins/tmux-resurrect $HOME/.tmux/tmux-ressurect
 ```
 
 ## Useful shortcuts list
