@@ -6,12 +6,7 @@ if [ -f "$HOME/.fzf.zsh" ]; then
     source "$HOME/.fzf.zsh"
     export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-    export FZF_DEFAULT_OPTS="\
-        --border sharp \
-        --layout reverse \
-        --multi \
-        --height=50% \
-        --color '$FZF_COLORS' "
+    export FZF_DEFAULT_OPTS="--layout reverse --multi --height=50%"
     export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 10'"
     export FZF_COMPLETION_DIR_COMMANDS="cd pushd rmdir tree ls"
 fi
@@ -33,7 +28,7 @@ autoload -Uz vcs_info
 precmd () { vcs_info }
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '%b'
-PS1='%B%F{black}[%T]%f%F{magenta}[$vcs_info_msg_0_]%f%F{green}%~%f%F{yellow}$%f%b '
+PS1='%B%F{black}[%T]%f%F{magenta}[$vcs_info_msg_0_]%f%F{green}[%~]%f%F{yellow}$%f%b '
 
 # Set defaults
 export EDITOR="nvim"
