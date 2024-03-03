@@ -60,7 +60,7 @@ highlight CursorLineNR cterm=NONE ctermbg=NONE ctermfg=220 guibg=NONE guifg=NONE
 set cursorline
 
 function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+  return system("{git symbolic-ref -q --short HEAD 2>/dev/null || git describe --tags 2> /dev/null} | tr -d '\n'")
 endfunction
 
 function! StatuslineGit()

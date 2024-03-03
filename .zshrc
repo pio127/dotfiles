@@ -28,7 +28,7 @@ autoload -Uz vcs_info
 precmd () { vcs_info }
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '%b'
-PS1='%B%F{black}[%T]%f%F{magenta}[$vcs_info_msg_0_]%f%F{green}[%~]%f%F{yellow}$%f%b '
+PS1='%B%F{black}[%T]%f%b%F{cyan}<$vcs_info_msg_0_>%f%F{green}[%~]%f%F{yellow}$%f '
 
 # Set defaults
 export EDITOR="nvim"
@@ -70,6 +70,7 @@ alias gb='git branch '
 alias gc='git commit'
 alias gd='git diff'
 alias gco='git checkout '
+alias gcm='git checkout master'
 alias glog='git log --graph --abbrev-commit --oneline --decorate'
 
 # Prevent ctrl+d shell exit behaviour
