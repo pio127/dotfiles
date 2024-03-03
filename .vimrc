@@ -74,7 +74,7 @@ let g:currentmode={
        \ 'V'  : 'V·Line ',
        \ "\<C-V>" : 'V·Block ',
        \ 'i'  : 'INSERT ',
-       \ 'R'  : 'R ',
+       \ 'R'  : 'Replace ',
        \ 'Rv' : 'V·Replace ',
        \ 'c'  : 'Command ',
        \ 't'  : 'Terminal ',
