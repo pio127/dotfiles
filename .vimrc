@@ -56,7 +56,11 @@ colorscheme gruvbox
 highlight Normal ctermfg=NONE ctermbg=NONE
 highlight LineNr ctermfg=236 ctermbg=NONE
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-highlight CursorLineNR cterm=NONE ctermbg=NONE ctermfg=220 guibg=NONE guifg=NONE
+highlight CursorLineNR cterm=bold ctermbg=NONE ctermfg=black guibg=NONE guifg=NONE
+highlight TabLineFill ctermfg=NONE ctermbg=NONE
+highlight TabLine cterm=NONE ctermfg=white ctermbg=NONE
+highlight TabLineSel cterm=NONE ctermfg=white ctermbg=black
+highlight Title ctermfg=white ctermbg=NONE
 set cursorline
 
 function! GitBranch()
