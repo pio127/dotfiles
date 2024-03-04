@@ -43,17 +43,20 @@ git clone https://github.com/tmux-plugins/tmux-resurrect $HOME/.tmux/tmux-ressur
 ### Vim
 | Keys          | Mode   | Description                                 |
 | ------------- | ------ | ------------------------------------------- |
-| Ctrl-o        | INSERT | Change to normal mode once.                 |
 | Ctrl-a/x      | NORMAL | Increment/Decrement value.                  |
 | g Ctrl-a/x    | NORMAL | Increment/Decrement values in growing order.|
-| Ctrl-r=       | INSERT | Calculate simple math expression.           |
 | gi            | NORMAL | Start insert in last insert place.          |
-| o             | VISUAL | Go to the other end of selection.           |
-| Ctrl-p/n      | NORMAL | Basic word completion upward/downward.      |
+| gv            | NORMAL | Select previous visual selection.           |
+| gw            | NORMAL | Format text.                                |
+| Ctrl-r=       | INSERT | Calculate simple math expression.           |
+| Ctrl-o        | INSERT | Change to normal mode once.                 |
+| Ctrl-p/n      | INSERT | Basic word completion upward/downward.      |
 | Ctrl-e        | INSERT | Cancel word completion.                     |
 | Ctrl-y        | INSERT | Accept word completion.                     |
 | Ctrl-x Ctrl-l | INSERT | Whole line completion.                      |
 | Ctrl-x Ctrl-o | INSERT | Syntax-aware omnicompletion.                |
+| o             | VISUAL | Go to the other end of selection.           |
+| !             | VISUAL | Call external command for a selection.      |
 
 ### Emacs
 | Keys                   | Description                                 |
