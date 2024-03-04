@@ -9,40 +9,41 @@ call plug#begin()
 call plug#end()
 
 "Enable options
-set number
-set wrap
-set ruler
-set title
-set wildmenu
-set confirm
-set hlsearch
-set infercase
-set incsearch
-set gdefault
+set background=dark
+set backspace=2
 set breakindent
+set clipboard+=unnamedplus
+set confirm
+set cursorline
+set encoding=utf-8
+set ff=unix
+set gdefault
+set history=10000
+set hlsearch
+set incsearch
+set infercase
+set laststatus=2
+set matchpairs+=<:>
+set mouse=a
+set number
+set relativenumber
+set ruler
+set shell=zsh
+set shortmess=F
+set showbreak=↳
 set splitbelow
 set splitright
-set encoding=utf-8
-set laststatus=2
-set background=dark
-set mouse=a
-set clipboard+=unnamedplus
-set history=10000
-set shell=zsh
-set showbreak=↳
-set ff=unix
-set backspace=2
-set shortmess=F
-set matchpairs+=<:>
-set relativenumber
+set title
+set wildmenu
+set wrap
 
 "Disable options
-set noerrorbells
 set nobackup
-set noswapfile
-set noundofile
+set noerrorbells
 set noshowcmd
 set noshowmode
+set noswapfile
+set noundofile
 
 "Set options not compatible with nvim
 if !has('nvim')
@@ -61,7 +62,6 @@ highlight TabLineFill ctermfg=NONE ctermbg=NONE
 highlight TabLine cterm=NONE ctermfg=white ctermbg=NONE
 highlight TabLineSel cterm=NONE ctermfg=white ctermbg=black
 highlight Title ctermfg=white ctermbg=NONE
-set cursorline
 
 function! GitBranch()
   return system("{git symbolic-ref -q --short HEAD 2>/dev/null || git describe --tags 2> /dev/null} | tr -d '\n'")
