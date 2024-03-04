@@ -28,7 +28,7 @@ autoload -Uz vcs_info
 precmd () { vcs_info }
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '%b'
-PS1=$'%B%F{green}%~ %f%F{magenta}$vcs_info_msg_0_%f%F{yellow}\n>%f%b '
+PS1=$'\n%B%F{green}%~ %f%F{magenta}$vcs_info_msg_0_%f%F{yellow}\n>%f%b '
 
 # Set defaults
 export EDITOR="nvim"
