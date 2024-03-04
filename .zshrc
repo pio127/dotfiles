@@ -28,7 +28,7 @@ autoload -Uz vcs_info
 precmd () { vcs_info }
 setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '%b'
-PS1=$'%B%F{black}[%T]%f%F{green} %~ %f%F{magenta}$vcs_info_msg_0_%f%F{yellow}\n>%f%b '
+PS1=$'%B%F{green}%~ %f%F{magenta}$vcs_info_msg_0_%f%F{yellow}\n>%f%b '
 
 # Set defaults
 export EDITOR="nvim"
@@ -40,28 +40,19 @@ export HISTFILE="$HOME/.zsh_history"
 export SAVEHIST=100000
 export HISTSIZE=100000 
 
-# Add dot expansion script
-magic-dot() {
-  if [[ $LBUFFER = (|*[[:blank:]/]).. ]]; then
-    repeat ${NUMERIC-1} LBUFFER+=/..
-  else
-    zle self-insert
-  fi
-}
-zle -N magic-dot
-bindkey . magic-dot
-
 # Add aliases
 alias vi="nvim"
 alias cls="clear -x"
 alias ls='ls --color=auto'
-alias ll='ls -alF'
-alias la='ls -A'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias l='ls -CF'
+alias ll='ls -alF'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
-alias duhast='du -sh * | sort -hr'
+alias dust='du -sh * | sort -hr'
 alias gst='git status'
 alias ga='git add'
 alias gp='git push'
