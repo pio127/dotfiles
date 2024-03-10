@@ -4,7 +4,7 @@ autoload -U compinit; compinit
 # Add fzf
 if [ -f "$HOME/.fzf.zsh" ]; then
     source "$HOME/.fzf.zsh"
-    export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+    export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git' 2>/dev/null"
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     export FZF_DEFAULT_OPTS="--layout reverse --multi --height=50%"
     export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 10'"
@@ -53,7 +53,7 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 alias dust='du -sh * | sort -hr'
-alias gst='git status'
+alias gst='git status --short'
 alias ga='git add'
 alias gp='git push'
 alias gpo='git pull origin'
@@ -62,7 +62,7 @@ alias gc='git commit'
 alias gd='git diff'
 alias gco='git checkout '
 alias gcm='git checkout master'
-alias glog='git log --graph --abbrev-commit --oneline --decorate'
+alias glog='git log --graph --abbrev-commit --decorate --stat --stat-width=50'
 
 # Prevent ctrl+d shell exit behaviour
 set -o ignoreeof
