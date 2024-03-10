@@ -124,6 +124,8 @@ inoremap jk <c-c>`^
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap <silent> <CR> :noh<CR><CR>
+nnoremap <silent> <S-Tab> :silent! cprev<CR>
+nnoremap <silent> <Tab> :silent! cnext<CR>
 noremap C "_C
 noremap X "_X
 noremap c "_c
@@ -144,17 +146,19 @@ nmap <Leader>T :Tags<CR>
 nmap <Leader>l :BLines<CR>
 nmap <Leader>L :Lines<CR>
 nmap <Leader>' :Marks<CR>
-nmap <Leader>H :Helptags!<CR>
+nmap <Leader>H :Helptags<CR>
 nmap <Leader>/ :Rg<Space>
 nmap <Leader>: :History:<CR>
-nmap <Leader>M :Maps<CR>
+nmap <Leader>m :Maps<CR>
 nmap <Leader>s :Filetypes<CR>
+nmap <Leader>j :Jumps<CR>
+nmap <Leader>c :Changes<CR>
+
+"Add custom commands
+command! ClearQuickfixList cexpr [] | cclose
 
 "Add custom automatic commands
 autocmd VimResized * wincmd =
 autocmd CursorHold * if @% != '' && @% != '!zsh' | silent! update | endif
-augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave *.* mkview
-  autocmd BufWinEnter *.* silent! loadview
-augroup END
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent! loadview
