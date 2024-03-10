@@ -9,6 +9,7 @@ call plug#begin()
 call plug#end()
 
 "Enable options
+set autoindent
 set background=dark
 set backspace=2
 set breakindent
@@ -16,12 +17,13 @@ set clipboard+=unnamedplus
 set confirm
 set cursorline
 set encoding=utf-8
+set expandtab
 set ff=unix
 set gdefault
 set history=10000
 set hlsearch
-set incsearch
 set ignorecase
+set incsearch
 set infercase
 set laststatus=2
 set matchpairs+=<:>
@@ -30,14 +32,16 @@ set number
 set relativenumber
 set ruler
 set shell=zsh
+set shiftwidth=4
 set shortmess=F
 set showbreak=↳
 set splitbelow
 set splitright
+set tabstop=4
 set title
+set updatetime=1000
 set wildmenu
 set wrap
-set updatetime=1000
 
 "Disable options
 set nobackup
@@ -64,7 +68,7 @@ else
     set nocompatible
 endif
 
-"Set style and color
+"Set custom syntax highlighting options
 syntax enable 
 colorscheme gruvbox
 highlight Normal        ctermfg=NONE   ctermbg=NONE
@@ -76,15 +80,7 @@ highlight TabLine       ctermfg=white  ctermbg=NONE  cterm=NONE
 highlight TabLineSel    ctermfg=white  ctermbg=236   cterm=NONE
 highlight Title         ctermfg=white  ctermbg=NONE
 
-function! GitBranch()
-  return system("{git symbolic-ref -q --short HEAD 2>/dev/null || git describe --tags 2> /dev/null} | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
+"Set custom vim statusline
 let g:currentmode={
        \ 'n'  : 'NORMAL ',
        \ 'v'  : 'VISUAL ',
@@ -96,25 +92,15 @@ let g:currentmode={
        \ 'c'  : 'Command ',
        \ 't'  : 'Terminal ',
        \}
-
 set statusline=
 set statusline+=\ %{toupper(g:currentmode[mode()])}
-set statusline+=%#PmenuSel#
-set statusline+=%{StatuslineGit()}
 set statusline+=%#Normal#
-set statusline+=\ %f
-set statusline+=:%l
-set statusline+=%=
+set statusline+=\ %f:%l
 set statusline+=%{&modified?'[+]':''}
+set statusline+=%=
 set statusline+=\%y
 set statusline+=\[%{&fileencoding?&fileencoding:&encoding}\]
 set statusline+=\[%{&fileformat}\]
-
-"Default text formatting
-set tabstop=4
-set shiftwidth=4
-set autoindent
-set expandtab
 
 "Add orgmode highlighting options
 function OrgModeOptions()
@@ -124,7 +110,7 @@ function OrgModeOptions()
     hi orgDone ctermfg=darkgreen
 endfunction
 
-"Filetype specific formatting
+"Set filetype specific formatting
 autocmd Filetype c,cpp,h,hpp setlocal cindent
 autocmd Filetype make setlocal noexpandtab
 autocmd Filetype org call OrgModeOptions()
