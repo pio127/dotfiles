@@ -21,6 +21,7 @@ set gdefault
 set history=10000
 set hlsearch
 set incsearch
+set ignorecase
 set infercase
 set laststatus=2
 set matchpairs+=<:>
@@ -36,6 +37,7 @@ set splitright
 set title
 set wildmenu
 set wrap
+set updatetime=1000
 
 "Disable options
 set nobackup
@@ -45,8 +47,19 @@ set noshowmode
 set noswapfile
 set noundofile
 
-"Set options not compatible with nvim
-if !has('nvim')
+"Set options specific for only neovim or vim8/vim9
+if has('nvim')
+    let g:clipboard = {
+        \   'name': 'tmux',
+        \   'copy': {
+        \      '+': ['tmux', 'load-buffer', '-'],
+        \    },
+        \   'paste': {
+        \      '+': ['tmux', 'save-buffer', '-'],
+        \   },
+        \   'cache_enabled': 0,
+        \ }
+else
     set ttymouse=xterm2
     set nocompatible
 endif
@@ -54,14 +67,14 @@ endif
 "Set style and color
 syntax enable 
 colorscheme gruvbox
-highlight Normal ctermfg=NONE ctermbg=NONE
-highlight LineNr ctermfg=236 ctermbg=NONE
-highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-highlight CursorLineNR cterm=bold ctermbg=NONE ctermfg=black guibg=NONE guifg=NONE
-highlight TabLineFill ctermfg=NONE ctermbg=NONE
-highlight TabLine cterm=NONE ctermfg=white ctermbg=NONE
-highlight TabLineSel cterm=NONE ctermfg=white ctermbg=236
-highlight Title ctermfg=white ctermbg=NONE
+highlight Normal        ctermfg=NONE   ctermbg=NONE
+highlight LineNr        ctermfg=236    ctermbg=NONE
+highlight CursorLine    ctermfg=NONE   ctermbg=NONE  cterm=NONE
+highlight CursorLineNR  ctermfg=black  ctermbg=NONE  cterm=bold
+highlight TabLineFill   ctermfg=NONE   ctermbg=NONE
+highlight TabLine       ctermfg=white  ctermbg=NONE  cterm=NONE    
+highlight TabLineSel    ctermfg=white  ctermbg=236   cterm=NONE
+highlight Title         ctermfg=white  ctermbg=NONE
 
 function! GitBranch()
   return system("{git symbolic-ref -q --short HEAD 2>/dev/null || git describe --tags 2> /dev/null} | tr -d '\n'")
@@ -103,7 +116,7 @@ set shiftwidth=4
 set autoindent
 set expandtab
 
-"Set orgmode highlighting options
+"Add orgmode highlighting options
 function OrgModeOptions()
     syn keyword orgTodo TODO
     syn keyword orgDone DONE
@@ -116,42 +129,26 @@ autocmd Filetype c,cpp,h,hpp setlocal cindent
 autocmd Filetype make setlocal noexpandtab
 autocmd Filetype org call OrgModeOptions()
 
-"Toggle relative number
-map <silent> <F2> :set relativenumber! \| :echom "Relative number -> " . &relativenumber<CR>
-
-"Toggle line wrapping
+"Add custom functional keys mappings
+map <silent> <F2> :set relativenumber! \| :echom "Relative num -> " . &relativenumber<CR>
 map <silent> <F3> :set wrap! \| :echom "Line wrapping -> " . &wrap<CR>
 
-"Turn off search highlight with enter key
+"Add custom mappings
+inoremap jk <c-c>`^
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
 nnoremap <silent> <CR> :noh<CR><CR>
-
-"If buffer is named then autosave after 1 sec idle
-set updatetime=1000
-autocmd CursorHold * if @% != '' && @% != '!zsh' | silent! update | endif
-   
-"Visual selection yank doesn't go to the start
-vmap y ygv<Esc>
-
-"Paste in visual mode without copying
-xnoremap p pgvy
-
-"Operation repetition over visual section
-xnoremap . :norm.<CR>
-
-"Perform macro, saved in q register, over visual section using Q key
-xnoremap Q :'<,'>:normal @q<CR>
-
-"Automatic split equilization when vim is resized
-autocmd VimResized * wincmd =
-
-"Prevent overwritting main register with c and x variants
+noremap C "_C
+noremap X "_X
 noremap c "_c
 noremap cc "_cc
-noremap C "_C
 noremap x "_x
-noremap X "_X
+vmap y ygv<Esc>
+xnoremap . :norm.<CR>
+xnoremap Q :'<,'>:normal @q<CR>
+xnoremap p pgvy
 
-"Add fzf.vim mappings
+"Add custom leader key mappings
 nmap <Leader>f :GFiles<CR>
 nmap <Leader>F :Files<CR>
 nmap <Leader>b :Buffers<CR>
@@ -167,28 +164,11 @@ nmap <Leader>: :History:<CR>
 nmap <Leader>M :Maps<CR>
 nmap <Leader>s :Filetypes<CR>
 
-"Exit insert mode using jk and prevent cursor to go back one character
-inoremap jk <c-c>`^
-
-"Save and restore view of buffers
+"Add custom automatic commands
+autocmd VimResized * wincmd =
+autocmd CursorHold * if @% != '' && @% != '!zsh' | silent! update | endif
 augroup remember_folds
   autocmd!
   autocmd BufWinLeave *.* mkview
   autocmd BufWinEnter *.* silent! loadview
 augroup END
-
-"Use tmux buffer as a clipboard
-let g:clipboard = {
-    \   'name': 'tmux',
-    \   'copy': {
-    \      '+': ['tmux', 'load-buffer', '-'],
-    \    },
-    \   'paste': {
-    \      '+': ['tmux', 'save-buffer', '-'],
-    \   },
-    \   'cache_enabled': 0,
-    \ }
-
-"Combine half-page navigation with cursor centering
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
