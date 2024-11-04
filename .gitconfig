@@ -3,8 +3,8 @@
     email = name@domain
 
 [core]
-    excludesfile = ~/.git_global/.gitignore_global
-    hooksPath = ~/.git_global/.git_hooks
+    excludesfile = ~/.config/git/.gitignore_global
+    hooksPath = ~/.config/git/.git_hooks
 
 [core]
     pager = delta
