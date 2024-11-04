@@ -4,7 +4,7 @@ autoload -U compinit; compinit
 # Add fzf
 if [ -f "$HOME/.fzf.zsh" ]; then
     source "$HOME/.fzf.zsh"
-    export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git' 2>/dev/null"
+    export FZF_DEFAULT_COMMAND="find . -not -path './.git/*' 2>/dev/null"
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     export FZF_DEFAULT_OPTS="--layout reverse --multi --height=50%"
     export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 10'"

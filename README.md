@@ -6,16 +6,15 @@
 3. tmux (https://github.com/tmux/tmux)
 4. mc (https://github.com/MidnightCommander/mc)
 5. fzf (https://github.com/junegunn/fzf)
-6. rg (https://github.com/BurntSushi/ripgrep)
-7. delta (https://github.com/dandavison/delta)
+6. delta (https://github.com/dandavison/delta)
 
 Installation:
 ```bash
 # Debian-based
-apt install zsh neovim tmux mc fzf ripgrep 
+apt install zsh neovim tmux mc fzf
 
 # Arch-based
-pacman -S zsh neovim tmux mc fzf ripgrep 
+pacman -S zsh neovim tmux mc fzf git-delta
 ```
 
 ## Plugins

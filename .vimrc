@@ -136,6 +136,10 @@ xnoremap . :norm.<CR>
 xnoremap Q :'<,'>:normal @q<CR>
 xnoremap p pgvy
 
+"Change leader key to space
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
 "Add custom leader key mappings
 nmap <Leader>f :GFiles<CR>
 nmap <Leader>F :Files<CR>
