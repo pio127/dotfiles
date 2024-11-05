@@ -16,7 +16,7 @@ if [ -d "$HOME/.zsh/fzf-tab/" ]; then
     source "$HOME/.zsh/fzf-tab/fzf-tab.plugin.zsh"
 fi
 
-# Add Midnight Commander browsing
+# Add Midnight Commander directory change persistence
 if [ -f /usr/share/mc/bin/mc-wrapper.sh ]; then
     alias mc=". /usr/share/mc/bin/mc-wrapper.sh"
 elif [ -f /usr/lib/mc/mc-wrapper.sh ]; then
@@ -64,7 +64,7 @@ alias gco='git checkout '
 alias gcm='git checkout master'
 alias glog='git log --graph --abbrev-commit --decorate --stat --stat-width=50'
 
-# Prevent ctrl+d shell exit behaviour
+# Prevent shell exit (^D)
 set -o ignoreeof
 
 # Enable readline emacs mode bindings
