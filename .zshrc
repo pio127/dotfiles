@@ -1,6 +1,11 @@
 # Add autocompletion
 autoload -U compinit; compinit
 
+# Add prompt editing in editor
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
 # Add fzf
 if [ -f "$HOME/.fzf.zsh" ]; then
     source "$HOME/.fzf.zsh"
