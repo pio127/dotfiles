@@ -149,7 +149,7 @@ nmap <Leader>l :BLines<CR>
 nmap <Leader>L :Lines<CR>
 nmap <Leader>' :Marks<CR>
 nmap <Leader>H :Helptags<CR>
-nmap <Leader>/ :Rg<Space>
+nmap <Leader>r :Rg<Space>
 nmap <Leader>: :History:<CR>
 nmap <Leader>m :Maps<CR>
 nmap <Leader>s :Filetypes<CR>
