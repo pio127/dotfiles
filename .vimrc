@@ -4,8 +4,6 @@ call plug#begin()
     Plug 'junegunn/fzf.vim'
     Plug 'morhetz/gruvbox'
     Plug 'christoomey/vim-tmux-navigator'
-    Plug 'itchyny/vim-cursorword'
-    Plug 'justinmk/vim-sneak'
 call plug#end()
 
 "Enable options
