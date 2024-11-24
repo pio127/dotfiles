@@ -21,7 +21,8 @@ pacman -S zsh neovim tmux mc fzf git-delta
 1. fzf-tab (https://github.com/Aloxaf/fzf-tab)
 2. fzf-vim (https://github.com/junegunn/fzf.vim)
 3. tmux-ressurect (https://github.com/tmux-plugins/tmux-resurrect)
-4. vim-tmux-navigator(https://github.com/christoomey/vim-tmux-navigator)
+4. vim-tmux-navigator (https://github.com/christoomey/vim-tmux-navigator)
+5. gruvbox (https://github.com/morhetz/gruvbox)
 
 Installation:
 ```bash
@@ -30,8 +31,9 @@ mkdir -p $HOME/.config/{zsh,vim,tmux}
 
 # Clone all plugins
 git clone https://github.com/Aloxaf/fzf-tab $HOME/.config/zsh/fzf-tab
-git clone https://github.com/junegunn/fzf.vim $HOME/.config/vim/fzf.vim
-git clone https://github.com/christoomey/vim-tmux-navigator $HOME/.config/vim/vim-tmux-navigator
+git clone https://github.com/junegunn/fzf.vim $HOME/.config/nvim/fzf.vim
+git clone https://github.com/christoomey/vim-tmux-navigator $HOME/.config/nvim/vim-tmux-navigator
+git clone https://github.com/morhetz/gruvbox $HOME/.config/nvim/gruvbox
 git clone https://github.com/tmux-plugins/tmux-resurrect $HOME/.config/tmux/tmux-ressurect
 
 # Clone fzf if needed
