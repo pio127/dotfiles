@@ -1,10 +1,8 @@
-"Add plugins
-call plug#begin()
-    Plug 'junegunn/fzf'
-    Plug 'junegunn/fzf.vim'
-    Plug 'morhetz/gruvbox'
-    Plug 'christoomey/vim-tmux-navigator'
-call plug#end()
+"Add plugins manually 
+set runtimepath+=$HOME/.config/fzf/fzf-source
+set runtimepath+=$HOME/.config/vim/fzf.vim
+set runtimepath+=$HOME/.config/vim/gruvbox
+set runtimepath+=$HOME/.config/vim/vim-tmux-navigator
 
 "Enable options
 set autoindent

@@ -18,24 +18,24 @@ pacman -S zsh neovim tmux mc fzf git-delta
 ```
 
 ## Plugins
-1. vim-plug (https://github.com/junegunn/vim-plug)
-3. fzf-tab (https://github.com/Aloxaf/fzf-tab)
+1. fzf-tab (https://github.com/Aloxaf/fzf-tab)
+2. fzf-vim (https://github.com/junegunn/fzf.vim)
 3. tmux-ressurect (https://github.com/tmux-plugins/tmux-resurrect)
+4. vim-tmux-navigator(https://github.com/christoomey/vim-tmux-navigator)
 
 Installation:
 ```bash
 # Create directories
-mkdir -p $HOME/.{zsh,vim,tmux}
+mkdir -p $HOME/.config/{zsh,vim,tmux}
 
-# Install vim-plug
-curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# Clone all plugins
+git clone https://github.com/Aloxaf/fzf-tab $HOME/.config/zsh/fzf-tab
+git clone https://github.com/junegunn/fzf.vim $HOME/.config/vim/fzf.vim
+git clone https://github.com/christoomey/vim-tmux-navigator $HOME/.config/vim/vim-tmux-navigator
+git clone https://github.com/tmux-plugins/tmux-resurrect $HOME/.config/tmux/tmux-ressurect
 
-# Install fzf-tab plugin
-git clone https://github.com/Aloxaf/fzf-tab $HOME/.zsh/fzf-tab
-
-# Install tmux-ressurect plugin
-git clone https://github.com/tmux-plugins/tmux-resurrect $HOME/.tmux/tmux-ressurect
+# Clone fzf if needed
+git clone https://github.com/junegunn/fzf $HOME/.config/fzf
 ```
 
 ## Useful shortcuts list
