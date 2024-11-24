@@ -49,19 +49,8 @@ set noshowmode
 set noswapfile
 set noundofile
 
-"Set options specific for only neovim or vim8/vim9
-if has('nvim')
-    let g:clipboard = {
-        \   'name': 'tmux',
-        \   'copy': {
-        \      '+': ['tmux', 'load-buffer', '-'],
-        \    },
-        \   'paste': {
-        \      '+': ['tmux', 'save-buffer', '-'],
-        \   },
-        \   'cache_enabled': 0,
-        \ }
-else
+"Set options for standard vim
+if !has('nvim')
     set ttymouse=xterm2
     set nocompatible
 endif
