@@ -1,5 +1,5 @@
 "Load plugins
-set runtimepath+=$HOME/.config/fzf/fzf-source
+set runtimepath+=$HOME/.config/fzf
 set runtimepath+=$HOME/.config/nvim/fzf.vim
 set runtimepath+=$HOME/.config/nvim/gruvbox
 set runtimepath+=$HOME/.config/nvim/vim-tmux-navigator

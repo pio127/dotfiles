@@ -7,8 +7,8 @@ zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
 # Add fzf
-if [ -f "$HOME/.config/fzf/.fzf.zsh" ]; then
-    source "$HOME/.config/fzf/.fzf.zsh"
+if [ -f "$HOME/.config/zsh/fzf.zsh" ]; then
+    source "$HOME/.config/zsh/fzf.zsh"
     export FZF_DEFAULT_COMMAND="find . -not -path './.git/*' 2>/dev/null"
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     export FZF_DEFAULT_OPTS="--layout reverse --multi --height=50%"
