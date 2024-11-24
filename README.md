@@ -15,6 +15,10 @@ apt install zsh neovim tmux mc fzf
 
 # Arch-based
 pacman -S zsh neovim tmux mc fzf git-delta
+
+# Cloning and downloading fzf binary
+git clone https://github.com/junegunn/fzf ~/.config/fzf
+~/.config/fzf/install --bin
 ```
 
 ## Plugins
