@@ -65,8 +65,10 @@ alias gpo='git pull origin'
 alias gb='git branch '
 alias gc='git commit'
 alias gd='git diff'
+alias gds='git diff --staged'
 alias gco='git checkout '
 alias gcm='git checkout master'
+alias gcd='git checkout development'
 alias glog='git log --graph --abbrev-commit --decorate --stat --stat-width=50'
 
 # Prevent shell exit (^D)
