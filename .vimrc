@@ -107,8 +107,6 @@ inoremap jk <c-c>`^
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 nnoremap <silent> <CR> :noh<CR><CR>
-nnoremap <silent> <S-Tab> :silent! cprev<CR>
-nnoremap <silent> <Tab> :silent! cnext<CR>
 noremap C "_C
 noremap X "_X
 noremap c "_c
@@ -140,6 +138,8 @@ nmap <Leader>m :Maps<CR>
 nmap <Leader>s :Filetypes<CR>
 nmap <Leader>j :Jumps<CR>
 nmap <Leader>c :Changes<CR>
+nnoremap <silent> <Leader><S-Tab> :silent! cprev<CR>
+nnoremap <silent> <Leader><Tab> :silent! cnext<CR>
 
 "Add custom commands
 command! ClearQuickfixList cexpr [] | cclose
