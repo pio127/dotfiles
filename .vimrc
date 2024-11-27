@@ -139,10 +139,8 @@ nmap <Leader>r :Rg<Space>
 nmap <Leader>: :History:<CR>
 nmap <Leader>m :Maps<CR>
 nmap <Leader>s :Filetypes<CR>
-nmap <Leader>j :Jumps<CR>
-nmap <Leader>c :Changes<CR>
-nnoremap <silent> <Leader><S-Tab> :silent! cprev<CR>
-nnoremap <silent> <Leader><Tab> :silent! cnext<CR>
+nnoremap <silent> <Leader>n :silent! cnext<CR>
+nnoremap <silent> <Leader>p :silent! cprev<CR>
 
 "Add custom commands
 command! ClearQuickfixList cexpr [] | cclose
