@@ -150,3 +150,9 @@ autocmd VimResized * wincmd =
 autocmd CursorHold * if @% != '' && @% != '!zsh' | silent! update | endif
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent! loadview
+
+" Change vimdiff collors
+hi DiffAdd      gui=none    guifg=NONE
+hi DiffChange   gui=none    guifg=NONE
+hi DiffDelete   gui=bold    guifg=#ff8080
+hi DiffText     gui=none    guifg=NONE
