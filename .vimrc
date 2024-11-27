@@ -1,6 +1,8 @@
 "Load plugins
 set runtimepath+=$HOME/.config/fzf
-set runtimepath+=$HOME/.config/nvim
+set runtimepath+=$HOME/.config/nvim/themes
+set runtimepath+=$HOME/.config/nvim/plugins/fzf.vim
+set runtimepath+=$HOME/.config/nvim/plugins/vim-tmux-navigator
 
 "Enable options
 set autoindent
