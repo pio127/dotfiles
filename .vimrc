@@ -94,6 +94,7 @@ function OrgModeOptions()
     hi orgTodo ctermfg=darkred
     hi orgDone ctermfg=darkgreen
 endfunction
+au BufRead,BufNewFile *.org set filetype=org
 
 "Set filetype specific formatting
 autocmd Filetype c,cpp,h,hpp setlocal cindent
