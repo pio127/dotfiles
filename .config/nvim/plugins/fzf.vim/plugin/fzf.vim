@@ -12,7 +12,7 @@
 "
 " The above copyright notice and this permission notice shall be
 " included in all copies or substantial portions of the Software.
-
+"
 " THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 " EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 " MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -161,4 +161,3 @@ onoremap <silent> <plug>(fzf-maps-o) <c-c>:<c-u>call fzf#vim#maps('o', 0)<cr>
 let &cpo = s:cpo_save
 unlet s:cpo_save
 
-"
