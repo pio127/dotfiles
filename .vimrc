@@ -47,13 +47,13 @@ set noshowmode
 set noswapfile
 set noundofile
 
-"Set options for standard vim
+"Set standard vim options
 if !has('nvim')
     set ttymouse=xterm2
     set nocompatible
 endif
 
-"Set custom syntax highlighting options
+"Set syntax highlighting options
 syntax enable 
 colorscheme gruvbox
 highlight Normal        ctermfg=NONE   ctermbg=NONE
@@ -64,8 +64,12 @@ highlight TabLineFill   ctermfg=NONE   ctermbg=NONE
 highlight TabLine       ctermfg=white  ctermbg=NONE  cterm=NONE    
 highlight TabLineSel    ctermfg=white  ctermbg=236   cterm=NONE
 highlight Title         ctermfg=white  ctermbg=NONE
+highlight DiffAdd       ctermfg=255    ctermbg=64    cterm=bold
+highlight DiffChange    ctermfg=NONE   ctermbg=NONE  cterm=NONE
+highlight DiffDelete    ctermfg=167    ctermbg=NONE  cterm=NONE
+highlight DiffText      ctermfg=255    ctermbg=24    cterm=bold
 
-"Set custom vim statusline
+"Set vim statusline
 let g:currentmode={
        \ 'n'  : 'NORMAL ',
        \ 'v'  : 'VISUAL ',
@@ -101,11 +105,9 @@ autocmd Filetype c,cpp,h,hpp setlocal cindent
 autocmd Filetype make setlocal noexpandtab
 autocmd Filetype org call OrgModeOptions()
 
-"Add custom functional keys mappings
+"Add mappings
 map <silent> <F2> :set relativenumber! \| :echom "Relative num -> " . &relativenumber<CR>
 map <silent> <F3> :set wrap! \| :echom "Line wrapping -> " . &wrap<CR>
-
-"Add custom mappings
 inoremap jk <c-c>`^
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
@@ -117,14 +119,13 @@ noremap cc "_cc
 noremap x "_x
 vmap y ygv<Esc>
 xnoremap . :norm.<CR>
-xnoremap Q :'<,'>:normal @q<CR>
 xnoremap p pgvy
 
 "Change leader key to space
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
-"Add custom leader key mappings
+"Add leader key mappings
 nmap <Leader>f :GFiles<CR>
 nmap <Leader>F :Files<CR>
 nmap <Leader>b :Buffers<CR>
@@ -142,17 +143,11 @@ nmap <Leader>s :Filetypes<CR>
 nnoremap <silent> <Leader>n :silent! cnext<CR>
 nnoremap <silent> <Leader>p :silent! cprev<CR>
 
-"Add custom commands
+"Add commands
 command! ClearQuickfixList cexpr [] | cclose
 
-"Add custom automatic commands
+"Add automatic commands
 autocmd VimResized * wincmd =
 autocmd CursorHold * if @% != '' && @% != '!zsh' | silent! update | endif
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent! loadview
-
-"Use cleaner vimdiff colors from minimalist theme
-hi DiffAdd       ctermfg=255     ctermbg=64      cterm=bold
-hi DiffChange    ctermfg=NONE    ctermbg=NONE    cterm=NONE
-hi DiffDelete    ctermfg=167     ctermbg=NONE    cterm=NONE
-hi DiffText      ctermfg=255     ctermbg=24      cterm=bold
