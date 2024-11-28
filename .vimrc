@@ -151,8 +151,8 @@ autocmd CursorHold * if @% != '' && @% != '!zsh' | silent! update | endif
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent! loadview
 
-" Change vimdiff collors
-hi DiffAdd      gui=none    guifg=NONE
-hi DiffChange   gui=none    guifg=NONE
-hi DiffDelete   gui=bold    guifg=#ff8080
-hi DiffText     gui=none    guifg=NONE
+"Use cleaner vimdiff colors from minimalist theme
+hi DiffAdd       ctermfg=255     ctermbg=64      cterm=bold
+hi DiffChange    ctermfg=NONE    ctermbg=NONE    cterm=NONE
+hi DiffDelete    ctermfg=167     ctermbg=NONE    cterm=NONE
+hi DiffText      ctermfg=255     ctermbg=24      cterm=bold
