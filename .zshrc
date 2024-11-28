@@ -9,16 +9,12 @@ bindkey "^X^E" edit-command-line
 # Add fzf
 if [ -f "$HOME/.config/zsh/fzf.zsh" ]; then
     source "$HOME/.config/zsh/fzf.zsh"
+    source "$HOME/.config/zsh/fzf-tab/fzf-tab.plugin.zsh"
     export FZF_DEFAULT_COMMAND="find . -not -path './.git/*' 2>/dev/null"
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     export FZF_DEFAULT_OPTS="--layout reverse --multi --height=50%"
     export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 10'"
     export FZF_COMPLETION_DIR_COMMANDS="cd pushd rmdir tree ls"
-fi
-
-# Add fzf-tab
-if [ -d "$HOME/.config/zsh/fzf-tab/" ]; then
-    source "$HOME/.config/zsh/fzf-tab/fzf-tab.plugin.zsh"
 fi
 
 # Add Midnight Commander directory change persistence
@@ -48,10 +44,10 @@ export HISTSIZE=100000
 # Add aliases
 alias vi="nvim"
 alias cls="clear -x"
-alias ls='ls --color=auto'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias ls='ls --color=auto'
 alias l='ls -CF'
 alias ll='ls -alF'
 alias cp='cp -iv'
