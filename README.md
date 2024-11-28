@@ -39,22 +39,24 @@ git clone https://github.com/christoomey/vim-tmux-navigator $HOME/.config/nvim/p
 
 ## Useful shortcuts list
 ### Vim
-| Keys          | Mode   | Description                                 |
-| ------------- | ------ | ------------------------------------------- |
-| Ctrl-a/x      | NORMAL | Increment/Decrement value.                  |
-| g Ctrl-a/x    | NORMAL | Increment/Decrement values in growing order.|
-| gi            | NORMAL | Start insert in last insert place.          |
-| gv            | NORMAL | Select previous visual selection.           |
-| gw            | NORMAL | Format text.                                |
-| Ctrl-r=       | INSERT | Calculate simple math expression.           |
-| Ctrl-o        | INSERT | Change to normal mode once.                 |
-| Ctrl-p/n      | INSERT | Basic word completion upward/downward.      |
-| Ctrl-e        | INSERT | Cancel word completion.                     |
-| Ctrl-y        | INSERT | Accept word completion.                     |
-| Ctrl-x Ctrl-l | INSERT | Whole line completion.                      |
-| Ctrl-x Ctrl-o | INSERT | Syntax-aware omnicompletion.                |
-| o             | VISUAL | Go to the other end of selection.           |
-| !             | VISUAL | Call external command for a selection.      |
+| Keys          | Mode    | Description                                 |
+| ------------- | ------  | ------------------------------------------- |
+| Ctrl-a/x      | NORMAL  | Increment/Decrement value.                  |
+| g Ctrl-a/x    | NORMAL  | Increment/Decrement values in growing order.|
+| gi            | NORMAL  | Start insert in last insert place.          |
+| gv            | NORMAL  | Select previous visual selection.           |
+| gw            | NORMAL  | Format text.                                |
+| Ctrl-r=       | INSERT  | Calculate simple math expression.           |
+| Ctrl-o        | INSERT  | Change to normal mode once.                 |
+| Ctrl-p/n      | INSERT  | Basic word completion upward/downward.      |
+| Ctrl-e        | INSERT  | Cancel word completion.                     |
+| Ctrl-y        | INSERT  | Accept word completion.                     |
+| Ctrl-x Ctrl-l | INSERT  | Whole line completion.                      |
+| Ctrl-x Ctrl-o | INSERT  | Syntax-aware omnicompletion.                |
+| o             | VISUAL  | Go to the other end of selection.           |
+| !             | VISUAL  | Call external command for a selection.      |
+| put r         | COMMAND | Pastes a given registry.                    |
+| norm          | COMMAND | Performs normal mode keys on a line.        |
 
 ### Emacs
 | Keys                   | Description                                 |
