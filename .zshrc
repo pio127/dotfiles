@@ -64,6 +64,7 @@ alias gd='git diff'
 alias gds='git diff --staged'
 alias gco='git checkout '
 alias gcm='git checkout master'
+alias gmt='git mergetool'
 alias gcd='git checkout development'
 alias glog='git log --graph --abbrev-commit --decorate --stat --stat-width=50'
 
