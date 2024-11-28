@@ -1,6 +1,7 @@
 # Dotfiles
 
-## Tools
+## Installation
+Tools:
 1. zsh (https://github.com/zsh-users/zsh)
 2. neovim (https://github.com/neovim/neovim)
 3. tmux (https://github.com/tmux/tmux)
@@ -8,33 +9,32 @@
 5. fzf (https://github.com/junegunn/fzf)
 6. delta (https://github.com/dandavison/delta)
 
-Installation:
-```bash
-# Debian-based
-apt install zsh neovim tmux mc fzf
-
-# Arch-based
-pacman -S zsh neovim tmux mc fzf git-delta
-
-# Cloning and downloading fzf binary
-git clone https://github.com/junegunn/fzf ~/.config/fzf
-~/.config/fzf/install --bin
-```
-
-## Plugins
+Plugins:
 1. fzf-tab (https://github.com/Aloxaf/fzf-tab)
 2. fzf-vim (https://github.com/junegunn/fzf.vim)
 3. tmux-ressurect (https://github.com/tmux-plugins/tmux-resurrect)
+4. vim-tmux-navigator (https://github.com/christoomey/vim-tmux-navigator)
 
 Installation:
 ```bash
-# Create directories
-mkdir -p $HOME/.config/{zsh,vim,tmux}
+# Debian-based
+apt install zsh neovim tmux mc
 
-# Clone all plugins
+# Arch-based
+pacman -S zsh neovim tmux mc
+
+# Clone and install (download) fzf binary
+git clone https://github.com/junegunn/fzf ~/.config/fzf
+~/.config/fzf/install --bin
+
+# Create directories if needed
+mkdir -p $HOME/.config/{zsh,nvim,tmux}
+
+# Clone plugins
 git clone https://github.com/Aloxaf/fzf-tab $HOME/.config/zsh/fzf-tab
-git clone https://github.com/junegunn/fzf.vim $HOME/.config/nvim/fzf.vim
+git clone https://github.com/junegunn/fzf.vim $HOME/.config/nvim/plugins/fzf.vim
 git clone https://github.com/tmux-plugins/tmux-resurrect $HOME/.config/tmux/tmux-ressurect
+git clone https://github.com/christoomey/vim-tmux-navigator $HOME/.config/nvim/plugins/vim-tmux-navigator
 ```
 
 ## Useful shortcuts list
