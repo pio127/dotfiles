@@ -1,12 +1,18 @@
 # Add autocompletion
 autoload -U compinit; compinit
 
-# Add prompt editing in editor
+# Add prompt editing options
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
+bindkey -e
 
-# Add fzf
+# Add QoL options
+set -o ignoreeof     # Prevent shell exit (^D)
+stty -ixon           # Disable flow start/stop characters(^S,^Q)
+setopt share_history # Update and read zsh history after each call
+
+# Add Fuzzy Finder
 if [ -f "$HOME/.config/zsh/fzf.zsh" ]; then
     source "$HOME/.config/zsh/fzf.zsh"
     source "$HOME/.config/zsh/fzf-tab/fzf-tab.plugin.zsh"
@@ -34,10 +40,10 @@ PS1=$'\n%B%F{green}%~ %f%F{magenta}$vcs_info_msg_0_%f%F{yellow}\n>%f%b '
 # Set defaults
 export EDITOR="nvim"
 export VISUAL="nvim"
-export MANPAGER='nvim +Man!'
 export PAGER="less"
+export MANPAGER='nvim +Man!'
 export TERM="xterm-256color"
-export HISTFILE="$HOME/.zsh_history"
+export HISTFILE="$HOME/.config/zsh/.zsh_history"
 export SAVEHIST=100000
 export HISTSIZE=100000 
 
@@ -67,15 +73,3 @@ alias gcm='git checkout master'
 alias gmt='git mergetool'
 alias gcd='git checkout development'
 alias glog='git log --graph --abbrev-commit --decorate --stat --stat-width=50'
-
-# Prevent shell exit (^D)
-set -o ignoreeof
-
-# Enable readline emacs mode bindings
-bindkey -e
-
-# Disable flow start/stop characters(^S,^Q)
-stty -ixon
-
-# Update and read zsh history after each call
-setopt share_history
