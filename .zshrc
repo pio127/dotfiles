@@ -13,9 +13,9 @@ stty -ixon           # Disable flow start/stop characters(^S,^Q)
 setopt share_history # Update and read zsh history after each call
 
 # Add Fuzzy Finder
-if [ -f "$HOME/.config/zsh/fzf.zsh" ]; then
-    source "$HOME/.config/zsh/fzf.zsh"
-    source "$HOME/.config/zsh/fzf-tab/fzf-tab.plugin.zsh"
+if [ -f "$HOME/.config/zsh/plugins/fzf.zsh" ]; then
+    source "$HOME/.config/zsh/plugins/fzf.zsh"
+    source "$HOME/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh"
     export FZF_DEFAULT_COMMAND="find . -not -path './.git/*' 2>/dev/null"
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     export FZF_DEFAULT_OPTS="--layout reverse --multi --height=50%"
