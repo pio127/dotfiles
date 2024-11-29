@@ -68,8 +68,10 @@ git clone https://github.com/christoomey/vim-tmux-navigator $HOME/.config/nvim/p
 | ---------------------- | ------------------------------------------- |
 | Esc+0123456789         | Function keys alternative.                  |
 | Ctrl-x q               | Toggle file preview mode.                   |
+| Ctrl-x h               | Save current location to hotlist.           |
 | Alt-,                  | Toggle show hidden files.                   |
 | Alt-.                  | Toggle vetical/horizontal panel split.      |
 | Alt-i                  | Set other panel to the same as current.     |
 | Alt-o                  | Open selected directory in other panel.     |
 | Ctrl-o                 | Toggle subshell view.                       |
+| Ctrl-\                 | Open hotlist window.                        |
