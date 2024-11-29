@@ -55,6 +55,17 @@ cp -iv .{tmux.conf,vimrc,zshrc,gitconfig} $HOME/
 | put r         | COMMAND | Pastes a given registry.                    |
 | norm          | COMMAND | Performs normal mode keys on a line.        |
 
+### Tmux
+| Keys                   | Description                                 |
+| ---------------------- | ------------------------------------------- |
+| prefix ,               | Rename current window.                      |
+| prefix $               | Rename current session.                     |
+| prefix !               | Move current pane to a new window.          |
+| prefix ]               | Paste from tmux buffer.                     |
+| prefix s               | Open sessions list.                         |
+| prefix L               | Switch back to the last session.            |
+| prefix ~               | Show tmux commands log.                     |
+
 ### Emacs
 | Keys                   | Description                                 |
 | ---------------------- | ------------------------------------------- |
