@@ -23,18 +23,15 @@ apt install zsh neovim tmux mc
 # Arch-based
 pacman -S zsh neovim tmux mc
 
-# Clone and install (download) fzf binary
-git clone https://github.com/junegunn/fzf ~/.config/fzf
-~/.config/fzf/install --bin
-
 # Create directories if needed
-mkdir -p $HOME/.config/{zsh,nvim,tmux}
+mkdir -p $HOME/.config/{mc,fzf,git,zsh,nvim,tmux}
 
-# Clone plugins
-git clone https://github.com/Aloxaf/fzf-tab $HOME/.config/zsh/fzf-tab
-git clone https://github.com/junegunn/fzf.vim $HOME/.config/nvim/plugins/fzf.vim
-git clone https://github.com/tmux-plugins/tmux-resurrect $HOME/.config/tmux/tmux-ressurect
-git clone https://github.com/christoomey/vim-tmux-navigator $HOME/.config/nvim/plugins/vim-tmux-navigator
+# Clone and install (download) fzf binary
+git clone https://github.com/junegunn/fzf $HOME/.config/fzf
+$HOME/.config/fzf/install --bin
+
+# Copy configs to home
+cp -iv .{tmux.conf,vimrc,zshrc,gitconfig} $HOME/
 ```
 
 ## Useful shortcuts list
