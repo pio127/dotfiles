@@ -66,9 +66,17 @@ cp -iv .{tmux.conf,vimrc,zshrc,gitconfig} $HOME/
 | Esc+0123456789         | Function keys alternative.                  |
 | Ctrl-x q               | Toggle file preview mode.                   |
 | Ctrl-x h               | Save current location to hotlist.           |
-| Alt-,                  | Toggle show hidden files.                   |
-| Alt-.                  | Toggle vetical/horizontal panel split.      |
+| Alt-.                  | Toggle show hidden files.                   |
+| Alt-,                  | Toggle vetical/horizontal panel split.      |
 | Alt-i                  | Set other panel to the same as current.     |
 | Alt-o                  | Open selected directory in other panel.     |
+| Alt-t                  | Change current panel display.               |
+| Alt-y                  | Jump to previous directory.                 |
+| Alt-u                  | Jump to next directory.                     |
+| Ctrl-r                 | Refresh active panel.                       |
+| Ctrl-u                 | Swap panels location.                       |
+| Ctrl-i                 | Change to other panel (like tab key).       |
 | Ctrl-o                 | Toggle subshell view.                       |
 | Ctrl-\                 | Open hotlist window.                        |
+| +                      | Select files matching pattern.              |
+| -                      | Deselect files matching pattern.            |
