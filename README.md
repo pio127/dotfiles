@@ -30,9 +30,10 @@ mkdir -p $HOME/.config/{mc,fzf,git,zsh,nvim,tmux}
 git clone https://github.com/junegunn/fzf $HOME/.config/fzf
 $HOME/.config/fzf/install --bin
 
-# Download and install delta binary
-wget https://github.com/dandavison/delta/releases/download/0.18.2/delta-0.18.2-x86_64-unknown-linux-gnu.tar.gz
-tar --strip-components 1 -zxvf delta-0.18.2-x86_64-unknown-linux-gnu.tar.gz -C ~/.local/bin delta-0.18.2-x86_64-unknown-linux-gnu/delta
+# Download and install delta locally
+DELTA_PKG="delta-0.18.2-x86_64-unknown-linux-gnu"
+wget https://github.com/dandavison/delta/releases/download/0.18.2/${DELTA_PKG}.tar.gz
+tar --strip-components 1 -zxvf ${DELTA_PKG}.tar.gz -C $HOME/.local/bin ${DELTA_PKG}/delta
 
 # Copy configs and plugins to home directory
 cp -iv .{tmux.conf,vimrc,zshrc,gitconfig} $HOME/
