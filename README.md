@@ -2,18 +2,18 @@
 
 ## Installation
 Tools:
-1. zsh (https://github.com/zsh-users/zsh)
-2. neovim (https://github.com/neovim/neovim)
-3. tmux (https://github.com/tmux/tmux)
-4. mc (https://github.com/MidnightCommander/mc)
-5. fzf (https://github.com/junegunn/fzf)
-6. delta (https://github.com/dandavison/delta)
+1. https://github.com/zsh-users/zsh
+2. https://github.com/neovim/neovim
+3. https://github.com/tmux/tmux
+4. https://github.com/MidnightCommander/mc
+5. https://github.com/junegunn/fzf
+6. https://github.com/dandavison/delta
 
 Plugins:
-1. fzf-tab (https://github.com/Aloxaf/fzf-tab)
-2. fzf-vim (https://github.com/junegunn/fzf.vim)
-3. tmux-ressurect (https://github.com/tmux-plugins/tmux-resurrect)
-4. vim-tmux-navigator (https://github.com/christoomey/vim-tmux-navigator)
+1. https://github.com/Aloxaf/fzf-tab
+2. https://github.com/junegunn/fzf.vim
+3. https://github.com/tmux-plugins/tmux-resurrect
+4. https://github.com/christoomey/vim-tmux-navigator
 
 Installation:
 ```bash
@@ -22,9 +22,6 @@ apt install zsh neovim tmux mc
 
 # Arch-based
 pacman -S zsh neovim tmux mc
-
-# Create directories if needed
-mkdir -p $HOME/.config/{mc,fzf,git,zsh,nvim,tmux}
 
 # Clone and install (download) fzf binary
 git clone https://github.com/junegunn/fzf $HOME/.config/fzf
