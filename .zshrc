@@ -44,8 +44,8 @@ export PAGER="less"
 export MANPAGER='nvim +Man!'
 export TERM="xterm-256color"
 export HISTFILE="$HOME/.config/zsh/.zsh_history"
-export SAVEHIST=100000
-export HISTSIZE=100000 
+export SAVEHIST=1000000
+export HISTSIZE=1000000
 
 # Add aliases
 alias vi="nvim"
@@ -54,8 +54,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ls='ls --color=auto'
-alias l='ls -CF'
-alias ll='ls -alF'
+alias l='ls -CAFX'
+alias ll='ls -lAFX'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
