@@ -136,18 +136,35 @@ nmap <Leader>l :BLines<CR>
 nmap <Leader>L :Lines<CR>
 nmap <Leader>' :Marks<CR>
 nmap <Leader>H :Helptags<CR>
-nmap <Leader>r :Rg<Space>
+"nmap <Leader>r :Rg<Space>
+nnoremap <Leader>r :Rg <C-R><C-W><CR>
+vnoremap <Leader>r y:Rg <C-R>"<CR>
 nmap <Leader>: :History:<CR>
 nmap <Leader>m :Maps<CR>
 nmap <Leader>s :Filetypes<CR>
 nnoremap <silent> <Leader>n :silent! cnext<CR>
 nnoremap <silent> <Leader>p :silent! cprev<CR>
 
-"Add commands
-command! ClearQuickfixList cexpr [] | cclose
-
 "Add automatic commands
 autocmd VimResized * wincmd =
 autocmd CursorHold * if @% != '' && @% != '!zsh' | silent! update | endif
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent! loadview
+
+" Add fix for repository root change when using fzf.vim
+function! FzfExplore(...)
+    let inpath = substitute(a:1, "'", '', 'g')
+    if inpath == "" || matchend(inpath, '/') == strlen(inpath)
+        execute "cd" getcwd() . '/' . inpath
+        let cwpath = getcwd() . '/'
+        call fzf#run(fzf#wrap(fzf#vim#with_preview({'source': 'ls -1ap', 'dir': cwpath, 'sink': 'FZFExplore', 'options': ['--prompt', cwpath]})))
+    else
+        let file = getcwd() . '/' . inpath
+        execute "e" file
+    endif
+endfunction
+command! -nargs=* FZFExplore call FzfExplore(shellescape(<q-args>))
+
+"Add quickfix list clear command
+command! ClearQuickfixList cexpr [] | cclose
+
