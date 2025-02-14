@@ -1,11 +1,13 @@
 # Add autocompletion
 autoload -U compinit; compinit
 
-# Add prompt editing options
+# Use emacs style readline bindings
+bindkey -e
+
+# Add prompt editing in external editor
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
-bindkey -e
 
 # Add QoL options
 set -o ignoreeof     # Prevent shell exit (^D)
