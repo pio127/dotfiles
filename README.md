@@ -46,6 +46,7 @@ cp -ivr .config/{tmux,nvim,zsh,git,mc} $HOME/.config/
 | gi            | NORMAL  | Start insert in last insert place.          |
 | gv            | NORMAL  | Select previous visual selection.           |
 | gw            | NORMAL  | Format text.                                |
+| cgn           | NORMAL  | Change next occurence.                      |
 | Ctrl-r=       | INSERT  | Calculate simple math expression.           |
 | Ctrl-o        | INSERT  | Change to normal mode once.                 |
 | Ctrl-p/n      | INSERT  | Basic word completion upward/downward.      |
