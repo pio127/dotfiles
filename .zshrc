@@ -18,17 +18,16 @@ setopt share_history # Update and read zsh history after each call
 if [ -f "$HOME/.config/zsh/plugins/fzf.zsh" ]; then
     source "$HOME/.config/zsh/plugins/fzf.zsh"
     source "$HOME/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh"
-    export FZF_DEFAULT_COMMAND="find . -not -path './.git/*' 2>/dev/null"
-    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    export FZF_DEFAULT_COMMAND='fd --hidden --follow --exclude .git --exclude node_modules --exclude .wine-ni-ceip --exclude .steam 2> /dev/null'
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND --type f"
+    export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
     export FZF_DEFAULT_OPTS="--layout reverse --multi --height=50%"
     export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 10'"
     export FZF_COMPLETION_DIR_COMMANDS="cd pushd rmdir tree ls"
 fi
 
 # Add Midnight Commander directory change persistence
-if [ -f /usr/share/mc/bin/mc-wrapper.sh ]; then
-    alias mc=". /usr/share/mc/bin/mc-wrapper.sh"
-elif [ -f /usr/lib/mc/mc-wrapper.sh ]; then
+if [ -f /usr/lib/mc/mc-wrapper.sh ]; then
     alias mc=". /usr/lib/mc/mc-wrapper.sh"
 fi
 
@@ -51,6 +50,7 @@ export HISTSIZE=1000000
 
 # Add aliases
 alias vi="nvim"
+alias vim="nvim"
 alias cls="clear -x"
 alias ..='cd ..'
 alias ...='cd ../..'
