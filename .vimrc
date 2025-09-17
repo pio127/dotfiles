@@ -144,6 +144,8 @@ nmap <Leader>m :Maps<CR>
 nmap <Leader>s :Filetypes<CR>
 nnoremap <silent> <Leader>n :silent! cnext<CR>
 nnoremap <silent> <Leader>p :silent! cprev<CR>
+nnoremap <M-h> :tabprevious<CR>
+nnoremap <M-l> :tabnext<CR>
 
 "Add automatic commands
 autocmd VimResized * wincmd =
@@ -167,4 +169,3 @@ command! -nargs=* FZFExplore call FzfExplore(shellescape(<q-args>))
 
 "Add quickfix list clear command
 command! ClearQuickfixList cexpr [] | cclose
-

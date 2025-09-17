@@ -51,6 +51,7 @@ export HISTSIZE=1000000
 # Add aliases
 alias vi="nvim"
 alias vim="nvim"
+alias ta="tmux new -As Main"
 alias cls="clear -x"
 alias ..='cd ..'
 alias ...='cd ../..'
